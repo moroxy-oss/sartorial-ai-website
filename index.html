@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sartorial AI | AI Systems That Turn Inquiries Into Revenue</title>
-<meta name="description" content="Sartorial AI installs AI call handling, chat, follow-up, CRM automation and content systems inside professional and home service businesses. Deployed in 14 days.">
+<title>Sartorial AI | AI Systems That Turn Calls Into Revenue</title>
+<meta name="description" content="AI call handling, chat, follow-up, CRM automation and content systems for professional and home service businesses. Deployed in 14 days.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,75 +17,154 @@
 --card:#ffffff;
 --border:#E5E7EB;
 --primary:#2563EB;
+--soft:#F8FAFC;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
 font-family:'Inter',sans-serif;
 background:var(--bg);
 color:var(--text);
-line-height:1.6;
+line-height:1.65;
 }
 
-.container{max-width:1100px;margin:0 auto;padding:0 24px;}
-section{padding:100px 0;}
+.container{
+max-width:1150px;
+margin:0 auto;
+padding:0 28px;
+}
+
+section{
+padding:110px 0;
+}
 
 nav{
-position:fixed;top:0;left:0;right:0;
+position:fixed;
+top:0;left:0;right:0;
 background:white;
 border-bottom:1px solid var(--border);
 padding:18px 0;
 z-index:1000;
 }
 
-.nav-inner{display:flex;justify-content:space-between;align-items:center;}
-.logo{font-weight:800;font-size:18px;}
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:800;
+font-size:18px;
+letter-spacing:-0.3px;
+}
+
+.contact{
+font-size:14px;
+color:var(--muted);
+}
 
 .hero{
-padding:170px 0 120px;
-background:linear-gradient(135deg,#2563EB,#4F46E5);
+padding:180px 0 130px;
+background:linear-gradient(-45deg,#2563EB,#4F46E5,#0EA5E9,#2563EB);
+background-size:400% 400%;
+animation:gradient 14s ease infinite;
 color:white;
 }
 
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
 .hero h1{
-font-size:clamp(40px,5vw,60px);
+font-size:clamp(42px,5vw,64px);
 font-weight:800;
 line-height:1.05;
-margin-bottom:24px;
+margin-bottom:26px;
 max-width:900px;
 }
 
 .hero p{
-max-width:750px;
 font-size:18px;
-margin-bottom:32px;
+max-width:760px;
+margin-bottom:36px;
 opacity:.95;
 }
 
 .btn{
 display:inline-block;
-padding:14px 28px;
+padding:14px 30px;
 background:white;
 color:#111;
 font-weight:700;
-border-radius:8px;
+border-radius:10px;
 text-decoration:none;
+transition:.3s ease;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Trust Strip */
+
+.trust-strip{
+overflow:hidden;
+white-space:nowrap;
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+background:white;
+padding:28px 0;
+position:relative;
+}
+
+.trust-track{
+display:inline-flex;
+gap:70px;
+animation:scroll 30s linear infinite;
+}
+
+.trust-strip:hover .trust-track{
+animation-play-state:paused;
+}
+
+.trust-item{
+font-weight:600;
+font-size:14px;
+color:var(--muted);
+letter-spacing:.4px;
+opacity:.85;
+transition:.3s ease;
+}
+
+.trust-item:hover{
+color:var(--primary);
+opacity:1;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 .section-header{
-max-width:800px;
-margin:0 auto 60px;
 text-align:center;
+max-width:800px;
+margin:0 auto 70px;
 }
 
 .section-header h2{
-font-size:34px;
-margin-bottom:16px;
+font-size:36px;
+margin-bottom:18px;
 }
 
 .section-header p{
-color:var(--muted);
 font-size:18px;
+color:var(--muted);
 }
 
 .grid{
@@ -96,41 +175,95 @@ gap:28px;
 
 .card{
 border:1px solid var(--border);
-border-radius:14px;
-padding:32px;
-background:white;
-transition:.3s ease;
+border-radius:16px;
+padding:36px;
+background:var(--card);
+transition:.35s ease;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 border-color:var(--primary);
+box-shadow:0 16px 40px rgba(0,0,0,0.08);
 }
 
 .card h3{
 font-size:18px;
-margin-bottom:12px;
+margin-bottom:14px;
 }
 
 .card p{
-color:var(--muted);
 font-size:15px;
+color:var(--muted);
+}
+
+.soft{
+background:var(--soft);
+}
+
+.metric-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+text-align:center;
+}
+
+.metric h3{
+font-size:34px;
+color:var(--primary);
+margin-bottom:6px;
+}
+
+.metric p{
+color:var(--muted);
+font-size:14px;
+}
+
+.case{
+border:1px solid var(--border);
+border-radius:20px;
+padding:50px;
+background:white;
+transition:.3s ease;
+opacity:0;
+transform:translateY(40px);
+}
+
+.case.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.case h3{
+font-size:22px;
+margin-bottom:16px;
+}
+
+.case p{
+color:var(--muted);
+margin-bottom:16px;
 }
 
 .pricing{
-background:#F9FAFB;
+background:var(--soft);
 }
 
 .price-card{
 border:1px solid var(--border);
-border-radius:16px;
-padding:40px;
-text-align:left;
+border-radius:18px;
+padding:44px;
 background:white;
 }
 
 .price{
-font-size:30px;
+font-size:32px;
 font-weight:800;
 margin:20px 0;
 }
@@ -142,13 +275,13 @@ margin-top:20px;
 
 li{
 margin-bottom:10px;
-color:var(--muted);
 font-size:14px;
+color:var(--muted);
 }
 
 footer{
 border-top:1px solid var(--border);
-padding:40px 0;
+padding:50px 0;
 text-align:center;
 font-size:14px;
 color:var(--muted);
@@ -161,83 +294,141 @@ color:var(--muted);
 <nav>
 <div class="container nav-inner">
 <div class="logo">Sartorial AI</div>
-<div>info@sartorialai.co | 757-573-8193</div>
+<div class="contact">info@sartorialai.co | 757-573-8193</div>
 </div>
 </nav>
 
 <section class="hero">
 <div class="container">
-<h1>AI Systems That Capture, Qualify, and Follow Up With Every Customer — Automatically</h1>
+<h1>AI Systems That Capture, Qualify and Follow Up With Every Customer Automatically</h1>
 <p>
-Sartorial AI installs AI call handling, website chat, automated follow-up, CRM workflows, and content systems inside professional and home service businesses. We don’t sell software access. We deploy revenue systems.
+Sartorial AI installs AI call handling, website chat, automated follow-up, CRM workflows and content systems inside professional and home service businesses. We deploy revenue infrastructure in 14 days.
 </p>
 <a href="#pricing" class="btn">See Your Custom AI Demo</a>
+</div>
+</section>
+
+<section class="trust-strip">
+<div class="trust-track">
+<div class="trust-item">HubSpot</div>
+<div class="trust-item">Salesforce</div>
+<div class="trust-item">ServiceTitan</div>
+<div class="trust-item">Clio</div>
+<div class="trust-item">Google Workspace</div>
+<div class="trust-item">Zapier</div>
+<div class="trust-item">Twilio</div>
+<div class="trust-item">RingCentral</div>
+<div class="trust-item">Stripe</div>
+<div class="trust-item">AWS</div>
+<div class="trust-item">HubSpot</div>
+<div class="trust-item">Salesforce</div>
+<div class="trust-item">ServiceTitan</div>
+<div class="trust-item">Clio</div>
+<div class="trust-item">Google Workspace</div>
+<div class="trust-item">Zapier</div>
+<div class="trust-item">Twilio</div>
+<div class="trust-item">RingCentral</div>
+<div class="trust-item">Stripe</div>
+<div class="trust-item">AWS</div>
 </div>
 </section>
 
 <section>
 <div class="container">
 <div class="section-header">
-<h2>What Sartorial AI Actually Does</h2>
-<p>We replace manual follow-up, missed calls, and slow response times with AI systems that work 24/7.</p>
+<h2>What We Install Inside Your Business</h2>
+<p>AI infrastructure designed to increase booked consultations and eliminate operational drag.</p>
 </div>
 
 <div class="grid">
-
 <div class="card">
-<h3>AI Call Handling & Voice Agents</h3>
-<p>AI answers inbound calls, captures caller details, qualifies prospects, books appointments, and routes urgent calls instantly. No more missed revenue after hours or during peak load.</p>
+<h3>AI Voice Agents</h3>
+<p>AI answers inbound calls, captures caller details, qualifies prospects and books appointments instantly.</p>
 </div>
-
 <div class="card">
-<h3>AI Website Chat & SMS</h3>
-<p>Intelligent chat agents engage visitors in real time, collect key information, and convert traffic into booked consultations automatically.</p>
+<h3>AI Website Chat</h3>
+<p>Real-time chat agents convert website visitors into qualified consultations automatically.</p>
 </div>
-
 <div class="card">
-<h3>Automated Follow-Up Systems</h3>
-<p>AI sends persistent follow-up across email and SMS until prospects respond. No lead is forgotten. Every inquiry gets a response in under 60 seconds.</p>
+<h3>Automated Follow-Up</h3>
+<p>Persistent SMS and email sequences ensure no lead is forgotten.</p>
 </div>
-
 <div class="card">
 <h3>Custom Workflow Automation</h3>
-<p>We build workflows that match your intake process — not generic templates. Leads are assigned, tagged, scheduled, and tracked automatically.</p>
+<p>We match your intake process and automate routing, tagging and scheduling.</p>
 </div>
-
 <div class="card">
 <h3>AI Knowledge Base</h3>
-<p>Your AI is trained on your pricing, services, FAQs, policies, and documentation so responses are accurate and on-brand.</p>
+<p>Your systems are trained on pricing, services, FAQs and policies for accurate responses.</p>
 </div>
-
 <div class="card">
-<h3>Content & Outbound Automation</h3>
-<p>AI generates blog content, email campaigns, outbound sequences, and marketing copy — all aligned to your brand voice and growth goals.</p>
+<h3>Content and Outbound Engine</h3>
+<p>AI generates blogs, email campaigns and outbound sequences aligned to your growth goals.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="soft">
+<div class="container">
+<div class="section-header">
+<h2>How It Works</h2>
+<p>Simple deployment. Measurable outcomes.</p>
 </div>
 
+<div class="metric-grid">
+<div class="metric">
+<h3>1</h3>
+<p>Strategy and Intake Mapping</p>
+</div>
+<div class="metric">
+<h3>2</h3>
+<p>AI Training and Workflow Build</p>
+</div>
+<div class="metric">
+<h3>3</h3>
+<p>Launch and Optimization</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-header">
+<h2>Case Study</h2>
+<p>Real outcomes from mid-market operators.</p>
+</div>
+
+<div class="case">
+<h3>HVAC Company | Multi-Location Operator</h3>
+<p>Installed AI voice answering and follow-up automation across three service areas.</p>
+<p><strong>Results within 90 days</strong></p>
+<ul>
+<li>38% increase in booked service calls</li>
+<li>24/7 call coverage with zero missed after-hours revenue</li>
+<li>22% faster lead-to-appointment time</li>
+</ul>
 </div>
 </div>
 </section>
 
 <section class="pricing" id="pricing">
 <div class="container">
-
 <div class="section-header">
 <h2>AI Deployment Packages</h2>
-<p>Each package installs a complete AI revenue system inside your business.</p>
+<p>Choose your infrastructure level.</p>
 </div>
 
 <div class="grid">
-
 <div class="price-card">
 <h3>Launch Protocol</h3>
 <div class="price">$1,500 / month</div>
-<p>Ideal for firms ready to modernize client intake and eliminate missed calls.</p>
 <ul>
-<li>AI call answering system</li>
-<li>AI website chat agent</li>
-<li>Automated SMS follow-up</li>
-<li>Basic CRM workflow automation</li>
-<li>Knowledge base training</li>
+<li>AI call answering</li>
+<li>AI website chat</li>
+<li>SMS follow-up automation</li>
+<li>Knowledge base setup</li>
 <li>14-day deployment</li>
 </ul>
 </div>
@@ -245,48 +436,47 @@ Sartorial AI installs AI call handling, website chat, automated follow-up, CRM w
 <div class="price-card">
 <h3>Revenue Accelerator</h3>
 <div class="price">$3,500 / month</div>
-<p>Full AI engagement infrastructure for growing mid-market firms.</p>
 <ul>
 <li>Everything in Launch Protocol</li>
-<li>Advanced CRM automations</li>
-<li>Outbound AI prospecting system</li>
-<li>Multi-channel follow-up sequences</li>
+<li>Advanced CRM automation</li>
+<li>Outbound AI prospecting</li>
 <li>Content automation engine</li>
-<li>Performance reporting dashboard</li>
+<li>Performance reporting</li>
 </ul>
 </div>
 
 <div class="price-card">
 <h3>Market Dominator</h3>
-<div class="price">Custom Pricing</div>
-<p>Enterprise AI infrastructure across multiple locations or departments.</p>
+<div class="price">Custom</div>
 <ul>
-<li>Unlimited AI agents</li>
-<li>Voice + SMS + Chat integration</li>
-<li>Advanced workflow architecture</li>
+<li>Multi-location AI architecture</li>
 <li>Custom API integrations</li>
-<li>Dedicated AI strategist</li>
-<li>Ongoing optimization & scaling</li>
+<li>Unlimited AI agents</li>
+<li>Dedicated strategist</li>
+<li>Ongoing optimization</li>
 </ul>
 </div>
-
 </div>
-
-</div>
-</section>
-
-<section>
-<div class="container" style="text-align:center;">
-<h2>Built for Professional & Home Service Businesses</h2>
-<p style="max-width:700px;margin:20px auto;color:#6B7280;">
-Law firms, medical practices, HVAC companies, contractors, financial advisors, and other mid-market operators use Sartorial AI to eliminate operational drag and increase booked consultations without increasing payroll.
-</p>
 </div>
 </section>
 
 <footer>
-© 2025 Sartorial AI | info@sartorialai.co | 757-573-8193
+© 2026 Sartorial AI | info@sartorialai.co | 757-573-8193
 </footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},{threshold:0.15});
+
+document.querySelectorAll('.card, .case').forEach(el=>{
+observer.observe(el);
+});
+</script>
 
 </body>
 </html>
