@@ -5,59 +5,124 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sartorial AI | AI That Turns Inquiries Into Revenue</title>
-<meta name="description" content="AI Client Engagement Systems for Professional & Home Service Firms. Respond in under 60 seconds. Book consultations automatically. Deployed in 14 days.">
+<meta name="description" content="AI Client Engagement Systems for Professional & Home Service Firms. Respond in under 60 seconds. Book consultations automatically.">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
---black:#0F1115;
---dark:#111827;
---light:#F4F6F9;
+--bg:#ffffff;
+--text:#0F1115;
+--card:#ffffff;
 --blue:#2F88FF;
 --neon:#3CF2C2;
 --gray:#6B7280;
 --border:#E5E7EB;
-font-family:'Montserrat',sans-serif;
+--darkbg:#0F172A;
+--darktext:#F9FAFB;
+}
+
+body.dark{
+--bg:#0F172A;
+--text:#F9FAFB;
+--card:#111827;
+--border:#1F2937;
+--gray:#9CA3AF;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:white;color:var(--black);line-height:1.6;}
+body{
+font-family:'Montserrat',sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:.3s ease;
+line-height:1.6;
+}
+
 .container{max-width:1150px;margin:0 auto;padding:0 28px;}
 section{padding:100px 0;}
 
 nav{
 position:fixed;top:0;left:0;right:0;
-background:white;border-bottom:1px solid var(--border);
-padding:18px 0;z-index:1000;
+background:var(--bg);
+border-bottom:1px solid var(--border);
+padding:18px 0;
+z-index:1000;
 }
 .nav-inner{display:flex;justify-content:space-between;align-items:center;}
-.logo{font-weight:800;font-size:20px;letter-spacing:-0.5px;}
-.nav-links a{margin-left:24px;text-decoration:none;font-weight:600;font-size:14px;color:var(--black);}
-.nav-links a:hover{color:var(--blue);}
-
-.btn{
-display:inline-block;padding:14px 28px;
-border-radius:8px;font-weight:700;font-size:14px;
-text-decoration:none;background:var(--blue);color:white;
-transition:.3s ease;
+.logo{font-weight:800;font-size:20px;}
+.nav-links a{margin-left:24px;text-decoration:none;font-weight:600;font-size:14px;color:var(--text);}
+.toggle{
+cursor:pointer;padding:6px 12px;border:1px solid var(--border);
+border-radius:6px;font-size:12px;
 }
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(47,136,255,0.3);}
 
-.hero{padding:170px 0 120px;}
+.hero{
+padding:170px 0 120px;
+background:linear-gradient(-45deg,#2F88FF,#3CF2C2,#6366F1,#2F88FF);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
+color:white;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
 .hero h1{
-font-size:clamp(42px,5vw,64px);
-font-weight:800;line-height:1.05;margin-bottom:24px;
+font-size:clamp(40px,5vw,64px);
+font-weight:800;
+line-height:1.05;
+margin-bottom:24px;
 max-width:900px;
 }
-.hero p{
-font-size:18px;color:var(--gray);
-margin-bottom:32px;max-width:750px;
-}
-.highlight{color:var(--blue);}
 
-.section-header{text-align:center;max-width:800px;margin:0 auto 60px;}
-.section-header h2{font-size:36px;margin-bottom:16px;}
+.hero p{
+max-width:700px;
+margin-bottom:32px;
+font-size:18px;
+color:#E5E7EB;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:8px;
+font-weight:700;
+font-size:14px;
+text-decoration:none;
+background:#ffffff;
+color:#111;
+transition:.3s ease;
+}
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+.trust{
+overflow:hidden;
+white-space:nowrap;
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+padding:25px 0;
+}
+.trust-track{
+display:inline-block;
+animation:scroll 20s linear infinite;
+}
+.trust span{
+margin:0 40px;
+font-weight:600;
+color:var(--gray);
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
 
 .grid{
 display:grid;
@@ -66,59 +131,96 @@ gap:30px;
 }
 
 .card{
+background:var(--card);
 border:1px solid var(--border);
-padding:32px;border-radius:14px;
-transition:.3s ease;background:white;
+padding:32px;
+border-radius:14px;
+transition:.3s ease;
 }
 .card:hover{
-border-color:var(--blue);
 transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,0.06);
+border-color:var(--blue);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.metric{font-size:28px;font-weight:800;color:var(--blue);margin:12px 0;}
-
 .roi{
-background:linear-gradient(135deg,#111827,#0F172A);
-color:white;padding:80px 40px;border-radius:18px;
+background:var(--darkbg);
+color:white;
+padding:80px 40px;
+border-radius:20px;
 text-align:center;
 }
 
-.slider-container{margin:30px 0;}
 input[type=range]{
 width:60%;
 appearance:none;height:6px;
-background:#374151;border-radius:4px;outline:none;
+background:#374151;border-radius:4px;
 }
 input[type=range]::-webkit-slider-thumb{
 appearance:none;width:20px;height:20px;
-background:var(--blue);border-radius:50%;
-cursor:pointer;
+background:var(--blue);
+border-radius:50%;cursor:pointer;
 }
 
-.result{font-size:32px;font-weight:800;margin-top:20px;color:var(--neon);}
+.result{
+font-size:32px;
+font-weight:800;
+margin-top:20px;
+color:var(--neon);
+}
 
-.pricing{
-background:var(--light);
+.pricing-toggle{
+text-align:center;
+margin-bottom:40px;
 }
 
 .price-card{
+background:var(--card);
 border:1px solid var(--border);
-padding:40px;border-radius:16px;
-transition:.3s ease;background:white;
+padding:40px;
+border-radius:16px;
 text-align:center;
+transition:.3s ease;
 }
 .price-card:hover{
 transform:translateY(-6px);
 border-color:var(--blue);
-box-shadow:0 12px 30px rgba(0,0,0,0.06);
 }
 
-.price{font-size:38px;font-weight:800;margin:20px 0;}
+.price{
+font-size:38px;
+font-weight:800;
+margin:20px 0;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+.modal-content{
+background:white;
+padding:40px;
+border-radius:12px;
+max-width:600px;
+}
+
+.founder{
+background:var(--darkbg);
+color:white;
+padding:100px 0;
+text-align:center;
+}
 
 footer{
-background:#0F1115;color:#999;text-align:center;
-padding:40px 0;font-size:14px;
+background:#000;
+color:#999;
+text-align:center;
+padding:40px 0;
+font-size:14px;
 }
 </style>
 </head>
@@ -128,77 +230,90 @@ padding:40px 0;font-size:14px;
 <nav>
 <div class="container nav-inner">
 <div class="logo">Sartorial AI</div>
-<div class="nav-links">
-<a href="#roi">ROI</a>
-<a href="#pricing">Packages</a>
-<a href="#contact">Contact</a>
+<div>
+<span class="toggle" onclick="toggleDark()">Dark Mode</span>
 </div>
 </div>
 </nav>
 
 <section class="hero">
 <div class="container">
-<h1>Turn Every Client Interaction Into Closed Deals With AI That <span class="highlight">Never Drops the Ball</span></h1>
-<p>
-AI Client Engagement Systems for Professional & Home Service Firms.<br><br>
-Stop losing $10K+ leads to slow follow-up. Our AI responds to every inquiry in under 60 seconds, books qualified consultations automatically, and follows up relentlessly — so you never miss revenue again. Live in 14 days, not 6 months.
-</p>
+<h1>Turn Every Client Interaction Into Closed Deals With AI That Never Drops the Ball</h1>
+<p>Stop losing $10K+ leads to slow follow-up. AI responds in under 60 seconds, books consultations automatically, and follows up relentlessly. Live in 14 days.</p>
 <a href="#contact" class="btn">See Your Custom AI Demo</a>
 </div>
 </section>
 
+<div class="trust">
+<div class="trust-track">
+<span>HubSpot</span>
+<span>Salesforce</span>
+<span>ServiceTitan</span>
+<span>Clio</span>
+<span>Zapier</span>
+<span>Google Workspace</span>
+<span>HubSpot</span>
+<span>Salesforce</span>
+<span>ServiceTitan</span>
+</div>
+</div>
+
 <section id="roi">
 <div class="container">
 <div class="roi">
-<h2>How Much Revenue Are You Losing Right Now?</h2>
+<h2>Revenue Leakage Calculator</h2>
+<p>Move the sliders.</p>
 
-<div class="slider-container">
-<p>Monthly Inbound Leads</p>
+<p>Monthly Leads</p>
 <input type="range" min="50" max="500" value="200" id="leads">
+
 <p>Average Deal Value ($)</p>
 <input type="range" min="500" max="5000" value="1500" id="value">
-<p>Lost Lead Percentage (%)</p>
+
+<p>Lost %</p>
 <input type="range" min="5" max="50" value="25" id="lost">
-</div>
 
 <div class="result" id="roiResult"></div>
-
 </div>
 </div>
 </section>
 
-<section id="pricing" class="pricing">
+<section id="pricing">
 <div class="container">
-<div class="section-header">
-<h2>Choose Your AI Deployment Level</h2>
+
+<div class="pricing-toggle">
+<button class="toggle" onclick="togglePricing()">Toggle Annual Discount</button>
 </div>
 
 <div class="grid">
-
 <div class="price-card">
 <h3>Launch Protocol</h3>
-<div class="price">$1,500 /mo</div>
-<p>AI call handling + intake automation for firms ready to modernize.</p>
+<div class="price" id="p1">$1,500/mo</div>
 </div>
 
 <div class="price-card">
 <h3>Revenue Accelerator</h3>
-<div class="price">$3,500 /mo</div>
-<p>Full AI client engagement + CRM automation + follow-up systems.</p>
+<div class="price" id="p2">$3,500/mo</div>
 </div>
 
 <div class="price-card">
 <h3>Market Dominator</h3>
 <div class="price">Custom</div>
-<p>Multi-location AI infrastructure, outbound systems, and growth automation.</p>
+</div>
 </div>
 
-</div>
 </div>
 </section>
 
-<section id="contact">
-<div class="container" style="text-align:center;padding:100px 0;">
+<section class="founder">
+<div class="container">
+<h2>Built for Modern Operators</h2>
+<p>Sartorial AI blends AI engineering with revenue strategy. We don’t experiment. We deploy measurable systems that increase bookings, improve response speed, and eliminate operational drag.</p>
+</div>
+</section>
+
+<section id="contact" style="text-align:center;padding:100px 0;">
+<div class="container">
 <h2>Ready to Modernize?</h2>
 <p>Email: info@sartorialai.co</p>
 <p>Phone: 757-573-8193</p>
@@ -206,8 +321,16 @@ Stop losing $10K+ leads to slow follow-up. Our AI responds to every inquiry in u
 </section>
 
 <footer>
-© 2025 Sartorial AI | Built for Revenue-Focused Operators
+© 2025 Sartorial AI
 </footer>
+
+<div class="modal" id="caseModal">
+<div class="modal-content">
+<h3>HVAC Case Study</h3>
+<p>+38% booking rate increase after AI call automation. 24/7 inbound capture eliminated missed calls.</p>
+<button onclick="closeModal()">Close</button>
+</div>
+</div>
 
 <script>
 function updateROI(){
@@ -216,15 +339,36 @@ let value=document.getElementById("value").value;
 let lost=document.getElementById("lost").value/100;
 let recovered=leads*value*lost*12;
 document.getElementById("roiResult").innerHTML=
-"Potential Annual Revenue Recovered: $" + recovered.toLocaleString();
+"$"+recovered.toLocaleString()+" Potential Annual Revenue Recovered";
 }
 document.querySelectorAll("input[type=range]").forEach(el=>{
 el.addEventListener("input",updateROI);
 });
 updateROI();
+
+function togglePricing(){
+let p1=document.getElementById("p1");
+let p2=document.getElementById("p2");
+if(p1.innerHTML.includes("mo")){
+p1.innerHTML="$15,000/yr";
+p2.innerHTML="$35,000/yr";
+}else{
+p1.innerHTML="$1,500/mo";
+p2.innerHTML="$3,500/mo";
+}
+}
+
+function toggleDark(){
+document.body.classList.toggle("dark");
+}
+
+function closeModal(){
+document.getElementById("caseModal").style.display="none";
+}
 </script>
 
 </body>
 </html>
+
 
 
