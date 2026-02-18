@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sartorial AI | AI That Converts Every Call</title>
-<meta name="description" content="AI Client Engagement Systems for Professional & Home Service Firms. Respond in under 60 seconds and never miss revenue again.">
+<title>Sartorial AI | AI Systems That Turn Inquiries Into Revenue</title>
+<meta name="description" content="Sartorial AI installs AI call handling, chat, follow-up, CRM automation and content systems inside professional and home service businesses. Deployed in 14 days.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,16 +17,6 @@
 --card:#ffffff;
 --border:#E5E7EB;
 --primary:#2563EB;
---darkbg:#0B1220;
---darkcard:#111827;
-}
-
-body.dark{
---bg:#0B1220;
---text:#F9FAFB;
---muted:#9CA3AF;
---card:#111827;
---border:#1F2937;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -34,7 +24,6 @@ body{
 font-family:'Inter',sans-serif;
 background:var(--bg);
 color:var(--text);
-transition:.3s ease;
 line-height:1.6;
 }
 
@@ -43,7 +32,7 @@ section{padding:100px 0;}
 
 nav{
 position:fixed;top:0;left:0;right:0;
-background:var(--bg);
+background:white;
 border-bottom:1px solid var(--border);
 padding:18px 0;
 z-index:1000;
@@ -51,30 +40,15 @@ z-index:1000;
 
 .nav-inner{display:flex;justify-content:space-between;align-items:center;}
 .logo{font-weight:800;font-size:18px;}
-.toggle{
-font-size:12px;
-border:1px solid var(--border);
-padding:6px 12px;
-border-radius:6px;
-cursor:pointer;
-}
 
 .hero{
 padding:170px 0 120px;
-background:linear-gradient(-45deg,#2563EB,#4F46E5,#0EA5E9,#2563EB);
-background-size:400% 400%;
-animation:gradient 14s ease infinite;
+background:linear-gradient(135deg,#2563EB,#4F46E5);
 color:white;
 }
 
-@keyframes gradient{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
 .hero h1{
-font-size:clamp(42px,5vw,64px);
+font-size:clamp(40px,5vw,60px);
 font-weight:800;
 line-height:1.05;
 margin-bottom:24px;
@@ -82,7 +56,7 @@ max-width:900px;
 }
 
 .hero p{
-max-width:700px;
+max-width:750px;
 font-size:18px;
 margin-bottom:32px;
 opacity:.95;
@@ -96,97 +70,86 @@ color:#111;
 font-weight:700;
 border-radius:8px;
 text-decoration:none;
-transition:.3s ease;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 12px 30px rgba(0,0,0,0.15);
-}
-
-.roi{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:20px;
-padding:60px;
+.section-header{
+max-width:800px;
+margin:0 auto 60px;
 text-align:center;
 }
 
-.slider-group{
-margin:30px 0;
+.section-header h2{
+font-size:34px;
+margin-bottom:16px;
 }
 
-label{
-display:block;
-margin-bottom:8px;
-font-weight:600;
-}
-
-.value-display{
-font-weight:700;
-margin-bottom:12px;
-color:var(--primary);
-}
-
-input[type=range]{
-width:100%;
-appearance:none;
-height:6px;
-background:#D1D5DB;
-border-radius:4px;
-outline:none;
-}
-
-input[type=range]::-webkit-slider-thumb{
-appearance:none;
-width:18px;height:18px;
-background:var(--primary);
-border-radius:50%;
-cursor:pointer;
-}
-
-.result{
-font-size:32px;
-font-weight:800;
-margin-top:30px;
-color:var(--primary);
-}
-
-.pricing{
-padding-top:0;
+.section-header p{
+color:var(--muted);
+font-size:18px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+gap:28px;
 }
 
-.price-card{
-background:var(--card);
+.card{
 border:1px solid var(--border);
-border-radius:16px;
-padding:40px;
-text-align:center;
+border-radius:14px;
+padding:32px;
+background:white;
 transition:.3s ease;
 }
 
-.price-card:hover{
-transform:translateY(-6px);
+.card:hover{
+transform:translateY(-5px);
 border-color:var(--primary);
 }
 
+.card h3{
+font-size:18px;
+margin-bottom:12px;
+}
+
+.card p{
+color:var(--muted);
+font-size:15px;
+}
+
+.pricing{
+background:#F9FAFB;
+}
+
+.price-card{
+border:1px solid var(--border);
+border-radius:16px;
+padding:40px;
+text-align:left;
+background:white;
+}
+
 .price{
-font-size:36px;
+font-size:30px;
 font-weight:800;
 margin:20px 0;
 }
 
+ul{
+list-style:none;
+margin-top:20px;
+}
+
+li{
+margin-bottom:10px;
+color:var(--muted);
+font-size:14px;
+}
+
 footer{
-background:var(--bg);
 border-top:1px solid var(--border);
-text-align:center;
 padding:40px 0;
+text-align:center;
 font-size:14px;
 color:var(--muted);
 }
@@ -198,105 +161,135 @@ color:var(--muted);
 <nav>
 <div class="container nav-inner">
 <div class="logo">Sartorial AI</div>
-<div class="toggle" onclick="toggleDark()">Toggle Dark</div>
+<div>info@sartorialai.co | 757-573-8193</div>
 </div>
 </nav>
 
 <section class="hero">
 <div class="container">
-<h1>Turn Every Client Call Into Revenue With AI That Never Drops the Ball</h1>
+<h1>AI Systems That Capture, Qualify, and Follow Up With Every Customer — Automatically</h1>
 <p>
-Stop losing $10K+ deals to slow follow-up. Our AI responds in under 60 seconds, books consultations automatically, and follows up relentlessly. Live in 14 days.
+Sartorial AI installs AI call handling, website chat, automated follow-up, CRM workflows, and content systems inside professional and home service businesses. We don’t sell software access. We deploy revenue systems.
 </p>
-<a href="#roi" class="btn">See Your Custom AI Demo</a>
+<a href="#pricing" class="btn">See Your Custom AI Demo</a>
 </div>
 </section>
 
-<section id="roi">
+<section>
 <div class="container">
-<div class="roi">
-<h2>Revenue Recovery Calculator</h2>
-
-<div class="slider-group">
-<label>Monthly Calls</label>
-<div class="value-display" id="callsValue">200 calls</div>
-<input type="range" min="50" max="500" value="200" id="calls">
+<div class="section-header">
+<h2>What Sartorial AI Actually Does</h2>
+<p>We replace manual follow-up, missed calls, and slow response times with AI systems that work 24/7.</p>
 </div>
 
-<div class="slider-group">
-<label>Average Deal Value</label>
-<div class="value-display" id="dealValue">$1,500</div>
-<input type="range" min="500" max="5000" value="1500" step="100" id="deal">
+<div class="grid">
+
+<div class="card">
+<h3>AI Call Handling & Voice Agents</h3>
+<p>AI answers inbound calls, captures caller details, qualifies prospects, books appointments, and routes urgent calls instantly. No more missed revenue after hours or during peak load.</p>
 </div>
 
-<div class="slider-group">
-<label>Missed Call Percentage</label>
-<div class="value-display" id="lostValue">25%</div>
-<input type="range" min="5" max="50" value="25" id="lost">
+<div class="card">
+<h3>AI Website Chat & SMS</h3>
+<p>Intelligent chat agents engage visitors in real time, collect key information, and convert traffic into booked consultations automatically.</p>
 </div>
 
-<div class="result" id="result"></div>
+<div class="card">
+<h3>Automated Follow-Up Systems</h3>
+<p>AI sends persistent follow-up across email and SMS until prospects respond. No lead is forgotten. Every inquiry gets a response in under 60 seconds.</p>
+</div>
+
+<div class="card">
+<h3>Custom Workflow Automation</h3>
+<p>We build workflows that match your intake process — not generic templates. Leads are assigned, tagged, scheduled, and tracked automatically.</p>
+</div>
+
+<div class="card">
+<h3>AI Knowledge Base</h3>
+<p>Your AI is trained on your pricing, services, FAQs, policies, and documentation so responses are accurate and on-brand.</p>
+</div>
+
+<div class="card">
+<h3>Content & Outbound Automation</h3>
+<p>AI generates blog content, email campaigns, outbound sequences, and marketing copy — all aligned to your brand voice and growth goals.</p>
+</div>
 
 </div>
 </div>
 </section>
 
-<section class="pricing">
+<section class="pricing" id="pricing">
 <div class="container">
-<h2 style="text-align:center;margin-bottom:60px;">AI Deployment Levels</h2>
+
+<div class="section-header">
+<h2>AI Deployment Packages</h2>
+<p>Each package installs a complete AI revenue system inside your business.</p>
+</div>
+
 <div class="grid">
 
 <div class="price-card">
 <h3>Launch Protocol</h3>
-<div class="price">$1,500/mo</div>
-<p>AI call handling + intake automation.</p>
+<div class="price">$1,500 / month</div>
+<p>Ideal for firms ready to modernize client intake and eliminate missed calls.</p>
+<ul>
+<li>AI call answering system</li>
+<li>AI website chat agent</li>
+<li>Automated SMS follow-up</li>
+<li>Basic CRM workflow automation</li>
+<li>Knowledge base training</li>
+<li>14-day deployment</li>
+</ul>
 </div>
 
 <div class="price-card">
 <h3>Revenue Accelerator</h3>
-<div class="price">$3,500/mo</div>
-<p>Full AI engagement + CRM + follow-up systems.</p>
+<div class="price">$3,500 / month</div>
+<p>Full AI engagement infrastructure for growing mid-market firms.</p>
+<ul>
+<li>Everything in Launch Protocol</li>
+<li>Advanced CRM automations</li>
+<li>Outbound AI prospecting system</li>
+<li>Multi-channel follow-up sequences</li>
+<li>Content automation engine</li>
+<li>Performance reporting dashboard</li>
+</ul>
 </div>
 
 <div class="price-card">
 <h3>Market Dominator</h3>
-<div class="price">Custom</div>
-<p>Multi-location AI infrastructure & growth automation.</p>
+<div class="price">Custom Pricing</div>
+<p>Enterprise AI infrastructure across multiple locations or departments.</p>
+<ul>
+<li>Unlimited AI agents</li>
+<li>Voice + SMS + Chat integration</li>
+<li>Advanced workflow architecture</li>
+<li>Custom API integrations</li>
+<li>Dedicated AI strategist</li>
+<li>Ongoing optimization & scaling</li>
+</ul>
 </div>
 
 </div>
+
+</div>
+</section>
+
+<section>
+<div class="container" style="text-align:center;">
+<h2>Built for Professional & Home Service Businesses</h2>
+<p style="max-width:700px;margin:20px auto;color:#6B7280;">
+Law firms, medical practices, HVAC companies, contractors, financial advisors, and other mid-market operators use Sartorial AI to eliminate operational drag and increase booked consultations without increasing payroll.
+</p>
 </div>
 </section>
 
 <footer>
-© 2025 Sartorial AI
+© 2025 Sartorial AI | info@sartorialai.co | 757-573-8193
 </footer>
-
-<script>
-function update(){
-let calls=document.getElementById("calls").value;
-let deal=document.getElementById("deal").value;
-let lost=document.getElementById("lost").value;
-
-document.getElementById("callsValue").innerHTML=calls+" calls";
-document.getElementById("dealValue").innerHTML="$"+parseInt(deal).toLocaleString();
-document.getElementById("lostValue").innerHTML=lost+"%";
-
-let recovered=calls*(lost/100)*deal*12;
-document.getElementById("result").innerHTML=
-"$"+recovered.toLocaleString()+" Potential Annual Revenue Recovered";
-}
-
-document.querySelectorAll("input").forEach(el=>{
-el.addEventListener("input",update);
-});
-update();
-
-function toggleDark(){
-document.body.classList.toggle("dark");
-}
-</script>
 
 </body>
 </html>
+
+
 
