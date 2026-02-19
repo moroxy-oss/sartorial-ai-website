@@ -4,257 +4,175 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sartorial AI | AI Revenue Infrastructure</title>
-<meta name="description" content="AI voice agents, chat, automated follow-up and workflow automation for professional and home service businesses. Deploy in 14 days. Increase booked revenue without adding staff.">
+<meta name="description" content="Interactive AI revenue infrastructure for modern service businesses.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
 --bg:#0B0F19;
---surface:#111827;
---soft:#1F2937;
+--glass:rgba(255,255,255,0.06);
+--border:rgba(255,255,255,0.12);
 --text:#F9FAFB;
 --muted:#9CA3AF;
 --primary:#3B82F6;
---border:#1F2937;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Inter',sans-serif;
-background:var(--bg);
+background:linear-gradient(160deg,#0B0F19,#111827);
 color:var(--text);
-line-height:1.6;
+overflow-x:hidden;
 }
 
-.container{
-max-width:1150px;
-margin:0 auto;
-padding:0 28px;
+.container{max-width:1150px;margin:0 auto;padding:0 32px;}
+section{padding:140px 0;}
+
+.glass{
+background:var(--glass);
+backdrop-filter:blur(20px);
+border:1px solid var(--border);
+border-radius:28px;
+padding:60px;
 }
 
-section{
-padding:120px 0;
-}
+h1{font-size:clamp(52px,6vw,78px);line-height:1.05;margin-bottom:30px;}
+h2{font-size:42px;margin-bottom:30px;}
+p{font-size:18px;color:var(--muted);}
 
-nav{
-position:fixed;
-top:0;left:0;right:0;
-background:rgba(11,15,25,.85);
-backdrop-filter:blur(10px);
-border-bottom:1px solid var(--border);
-padding:18px 0;
-z-index:1000;
-}
-
-.nav-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-weight:800;
-font-size:18px;
-}
-
-.nav-links a{
-color:var(--muted);
-margin-left:28px;
-text-decoration:none;
-font-weight:600;
-font-size:14px;
-}
-
-.nav-links a:hover{
-color:var(--primary);
-}
+.highlight{color:var(--primary);}
 
 .btn{
 display:inline-block;
-padding:16px 34px;
+padding:14px 28px;
 background:var(--primary);
 color:white;
-font-weight:700;
 border-radius:12px;
+font-weight:700;
 text-decoration:none;
-transition:.3s ease;
+transition:.25s ease;
+cursor:pointer;
 }
 
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 20px 50px rgba(59,130,246,.35);
-}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(59,130,246,.4);}
 
-.hero{
-padding:200px 0 160px;
-background:radial-gradient(circle at 30% 40%, rgba(59,130,246,.25), transparent 40%);
-}
+/* Interactive Architecture */
 
-.hero h1{
-font-size:clamp(52px,6vw,72px);
-font-weight:800;
-line-height:1.05;
-margin-bottom:28px;
-max-width:950px;
-}
-
-.hero p{
-font-size:20px;
-max-width:750px;
-color:var(--muted);
-margin-bottom:40px;
-}
-
-.highlight{
-color:var(--primary);
-}
-
-.trust{
-border-top:1px solid var(--border);
-border-bottom:1px solid var(--border);
-overflow:hidden;
-padding:35px 0;
-background:var(--surface);
-}
-
-.trust-track{
-display:inline-flex;
-gap:80px;
-animation:scroll 28s linear infinite;
-}
-
-.trust-item{
-color:var(--muted);
-font-weight:600;
-font-size:14px;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
-}
-
-.section-header{
-text-align:center;
-max-width:750px;
-margin:0 auto 80px;
-}
-
-.section-header h2{
-font-size:44px;
-margin-bottom:18px;
-}
-
-.section-header p{
-font-size:20px;
-color:var(--muted);
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:32px;
-}
-
-.card{
-background:var(--surface);
-border:1px solid var(--border);
-border-radius:22px;
-padding:42px;
-transition:.3s ease;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:var(--primary);
-box-shadow:0 25px 60px rgba(0,0,0,.5);
-}
-
-.card h3{
-font-size:20px;
-margin-bottom:14px;
-}
-
-.card p{
-color:var(--muted);
-}
-
-.timeline{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+.arch-container{
+display:flex;
+justify-content:center;
+align-items:center;
 gap:40px;
+flex-wrap:wrap;
 }
 
-.step-number{
-font-size:42px;
-font-weight:800;
-color:var(--primary);
-margin-bottom:12px;
-}
-
-.case{
-background:var(--surface);
-border:1px solid var(--border);
-border-radius:24px;
-padding:50px;
-margin-bottom:40px;
-}
-
-.case h3{
-margin-bottom:14px;
-}
-
-.case ul{
-margin-top:12px;
-}
-
-.case li{
-margin-bottom:8px;
-color:var(--muted);
-}
-
-.strategy-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:32px;
-}
-
-.strategy{
-background:var(--surface);
-border:1px solid var(--border);
-border-radius:24px;
-padding:50px;
+.node{
+width:140px;
+height:140px;
+border-radius:50%;
+background:var(--glass);
+display:flex;
+align-items:center;
+justify-content:center;
+border:2px solid var(--border);
+cursor:pointer;
 transition:.3s ease;
+text-align:center;
+padding:10px;
 }
 
-.strategy:hover{
+.node:hover{
 border-color:var(--primary);
-transform:translateY(-6px);
+transform:scale(1.08);
 }
 
-.price{
-font-size:36px;
-font-weight:800;
-margin:20px 0;
+.node.active{
+background:var(--primary);
 }
 
-.cta{
-background:linear-gradient(135deg,#2563EB,#4F46E5);
-border-radius:30px;
-padding:100px 40px;
+/* Pricing */
+
+.pricing-cards{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.price-card{
+width:300px;
+padding:40px;
+border-radius:24px;
+background:var(--glass);
+border:1px solid var(--border);
+transition:.4s ease;
+}
+
+.price-card.pop{
+transform:scale(1.06);
+border-color:var(--primary);
+}
+
+/* Case Studies */
+
+.metric-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.metric{
+padding:30px;
+background:var(--glass);
+border-radius:20px;
+border:1px solid var(--border);
 text-align:center;
 }
 
-.cta h2{
-font-size:48px;
-margin-bottom:20px;
+.metric h3{
+font-size:34px;
+color:var(--primary);
+}
+
+/* Chat Simulator */
+
+.chat-box{
+background:#111827;
+border-radius:20px;
+padding:30px;
+height:320px;
+overflow-y:auto;
+}
+
+.message{
+margin-bottom:15px;
+}
+
+.user{color:#3B82F6;}
+.ai{color:#10B981;}
+
+/* Revenue Dashboard */
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.dash-card{
+padding:30px;
+border-radius:20px;
+background:var(--glass);
+border:1px solid var(--border);
+text-align:center;
 }
 
 footer{
-border-top:1px solid var(--border);
-padding:60px 0;
+padding:80px 0;
 text-align:center;
 color:var(--muted);
 }
@@ -263,197 +181,115 @@ color:var(--muted);
 
 <body>
 
-<nav>
-<div class="container nav-inner">
-<div class="logo">Sartorial AI</div>
-<div class="nav-links">
-<a href="#product">Product</a>
-<a href="#industries">Industries</a>
-<a href="#cases">Case Studies</a>
-<a href="#strategies">Strategies</a>
-<a href="mailto:info@sartorialai.co">Contact</a>
-</div>
-</div>
-</nav>
-
-<section class="hero">
-<div class="container">
-<h1>Turn Every Customer Inquiry Into <span class="highlight">Booked Revenue</span></h1>
-<p>
-AI voice agents, website chat, automated follow-up and workflow automation for professional and home service businesses. Respond in under 60 seconds and book appointments automatically without adding staff.
-</p>
-<a href="#strategies" class="btn">See Your AI Demo</a>
-</div>
+<section class="container">
+<h1>AI Revenue Infrastructure That <span class="highlight">Scales</span></h1>
+<p>Explore the system powering modern operators.</p>
 </section>
 
-<section class="trust">
-<div class="trust-track">
-<div class="trust-item">HubSpot</div>
-<div class="trust-item">Salesforce</div>
-<div class="trust-item">ServiceTitan</div>
-<div class="trust-item">Clio</div>
-<div class="trust-item">Twilio</div>
-<div class="trust-item">Stripe</div>
-<div class="trust-item">Zapier</div>
-<div class="trust-item">AWS</div>
-<div class="trust-item">HubSpot</div>
-<div class="trust-item">Salesforce</div>
-<div class="trust-item">ServiceTitan</div>
-<div class="trust-item">Clio</div>
-<div class="trust-item">Twilio</div>
-<div class="trust-item">Stripe</div>
-<div class="trust-item">Zapier</div>
-<div class="trust-item">AWS</div>
+<!-- Interactive Architecture -->
+<section class="container">
+<h2>Interactive Architecture</h2>
+<div class="arch-container">
+<div class="node" onclick="selectNode(this,'Inbound traffic from calls and website.')">Inbound</div>
+<div class="node" onclick="selectNode(this,'AI voice and chat handle inquiries instantly.')">AI Layer</div>
+<div class="node" onclick="selectNode(this,'Qualification logic filters serious buyers.')">Qualification</div>
+<div class="node" onclick="selectNode(this,'CRM syncs and tracks revenue.')">CRM</div>
+<div class="node" onclick="selectNode(this,'Revenue dashboard measures results.')">Revenue</div>
 </div>
+<p id="nodeInfo" style="margin-top:30px;text-align:center;"></p>
 </section>
 
-<section id="product">
-<div class="container">
-<div class="section-header">
-<h2>AI Revenue Infrastructure</h2>
-<p>Four systems working together to capture, qualify and convert inbound demand.</p>
-</div>
-
-<div class="grid">
-<div class="card">
-<h3><span class="highlight">AI Voice Agents</span></h3>
-<p>Answer calls 24/7, qualify prospects and book appointments live.</p>
-</div>
-
-<div class="card">
-<h3><span class="highlight">AI Website Chat</span></h3>
-<p>Engage visitors instantly and convert them into scheduled consultations.</p>
-</div>
-
-<div class="card">
-<h3><span class="highlight">Automated Follow-Up</span></h3>
-<p>Respond within 60 seconds and continue SMS and email follow-up automatically.</p>
-</div>
-
-  <div class="card">
-<h3><span class="highlight">Automated Follow-Up</span></h3>
-<p>Respond within 60 seconds and continue SMS and email follow-up automatically.</p>
-</div>
-
-  <div class="card">
-<h3><span class="highlight">Automated Follow-Up</span></h3>
-<p>Respond within 60 seconds and continue SMS and email follow-up automatically.</p>
-</div>
-
-<div class="card">
-<h3><span class="highlight">Workflow Automation</span></h3>
-<p>Push qualified leads into your CRM with tagging, routing and scheduling.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<div class="section-header">
-<h2>Live in 14 Days</h2>
-<p>Structured deployment without disrupting your existing operations.</p>
-</div>
-
-<div class="timeline">
-<div>
-<div class="step-number">01</div>
-<h3>Revenue Audit</h3>
-<p class="muted">We analyze your intake, call handling and follow-up process.</p>
-</div>
-
-<div>
-<div class="step-number">02</div>
-<h3>AI Configuration</h3>
-<p class="muted">Systems are configured using advanced AI models trained on your services.</p>
-</div>
-
-<div>
-<div class="step-number">03</div>
-<h3>Launch & Optimize</h3>
-<p class="muted">Performance is monitored and refined for higher booking rates.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="cases">
-<div class="container">
-<div class="section-header">
-<h2>Proven Results</h2>
-</div>
-
-<div class="case">
-<h3>HVAC Multi-Location Operator</h3>
-<ul>
-<li>38 percent increase in booked calls</li>
-<li>24/7 coverage enabled</li>
-<li>22 percent faster response time</li>
-</ul>
-</div>
-
-<div class="case">
-<h3>Personal Injury Firm</h3>
-<ul>
-<li>31 percent increase in qualified consultations</li>
-<li>40 percent reduction in intake processing time</li>
-</ul>
-</div>
-
-<div class="case">
-<h3>Private Medical Practice</h3>
-<ul>
-<li>28 percent increase in booked appointments</li>
-<li>After-hours inquiries fully captured</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section id="strategies">
-<div class="container">
-<div class="section-header">
+<!-- Pricing -->
+<section class="container">
 <h2>Deployment Strategies</h2>
+<div class="pricing-cards">
+<div class="price-card" onclick="pop(this)">
+<h3>Launch</h3>
+<p>$1500 / month</p>
 </div>
-
-<div class="strategy-grid">
-<div class="strategy">
-<h3><span class="highlight">Launch</span></h3>
-<div class="price">$1,500 / month</div>
-<p>AI voice, chat and automated follow-up.</p>
+<div class="price-card" onclick="pop(this)">
+<h3>Scale</h3>
+<p>$3500 / month</p>
 </div>
-
-<div class="strategy">
-<h3><span class="highlight">Scale</span></h3>
-<div class="price">$3,500 / month</div>
-<p>Advanced workflow automation and reporting.</p>
-</div>
-
-<div class="strategy">
-<h3><span class="highlight">Dominance</span></h3>
-<div class="price">Custom</div>
-<p>Enterprise AI architecture for multi-location operators.</p>
-</div>
+<div class="price-card" onclick="pop(this)">
+<h3>Dominance</h3>
+<p>Custom</p>
 </div>
 </div>
 </section>
 
-<section>
-<div class="container">
-<div class="cta">
-<h2>Stop Losing Revenue to Slow Response</h2>
-<p style="margin:20px 0;font-size:20px;">Deploy AI in 14 days. No additional headcount required.</p>
-<a href="mailto:info@sartorialai.co" class="btn">Request Your AI Strategy Call</a>
+<!-- Case Studies -->
+<section class="container">
+<h2>Enterprise Case Metrics</h2>
+<div class="metric-grid">
+<div class="metric"><h3>38%</h3><p>Increase in booked calls</p></div>
+<div class="metric"><h3>31%</h3><p>More qualified consultations</p></div>
+<div class="metric"><h3>28%</h3><p>Increase in bookings</p></div>
+<div class="metric"><h3>24/7</h3><p>AI coverage activated</p></div>
 </div>
+</section>
+
+<!-- AI Chat Demo -->
+<section class="container">
+<h2>AI Chat Demo</h2>
+<div class="chat-box" id="chatBox"></div>
+<button class="btn" onclick="startChat()">Simulate Conversation</button>
+</section>
+
+<!-- Revenue Dashboard -->
+<section class="container">
+<h2>Revenue Projection Dashboard</h2>
+<div class="dashboard">
+<div class="dash-card"><h3 id="dashCalls">120</h3><p>Monthly Calls</p></div>
+<div class="dash-card"><h3 id="dashClose">32%</h3><p>Close Rate</p></div>
+<div class="dash-card"><h3 id="dashRevenue">$19,200</h3><p>Projected Revenue</p></div>
 </div>
 </section>
 
 <footer>
-© 2026 Sartorial AI | info@sartorialai.co | 757-573-8193
+© 2026 Sartorial AI
 </footer>
+
+<script>
+function selectNode(el,text){
+document.querySelectorAll('.node').forEach(n=>n.classList.remove('active'));
+el.classList.add('active');
+document.getElementById('nodeInfo').innerText=text;
+}
+
+function pop(el){
+document.querySelectorAll('.price-card').forEach(c=>c.classList.remove('pop'));
+el.classList.add('pop');
+}
+
+function startChat(){
+const chat=document.getElementById('chatBox');
+chat.innerHTML="";
+let messages=[
+{type:'user',text:'Hi, I need HVAC service.'},
+{type:'ai',text:'Great. What is your zip code?'},
+{type:'user',text:'23456'},
+{type:'ai',text:'Perfect. We have availability tomorrow at 2PM. Book it?'},
+{type:'user',text:'Yes.'},
+{type:'ai',text:'Appointment confirmed. Confirmation sent.'}
+];
+let i=0;
+let interval=setInterval(()=>{
+if(i>=messages.length){clearInterval(interval);return;}
+let msg=document.createElement('div');
+msg.className='message '+messages[i].type;
+msg.innerText=messages[i].text;
+chat.appendChild(msg);
+chat.scrollTop=chat.scrollHeight;
+i++;
+},900);
+}
+</script>
 
 </body>
 </html>
+
+
 
 
 
