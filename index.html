@@ -5,65 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sartorial AI | AI Revenue Infrastructure</title>
-<meta name="description" content="AI voice agents, chat and automated follow-up systems that convert inquiries into booked revenue.">
+<meta name="description" content="AI voice agents, chat and automated follow-up that convert inquiries into booked revenue.">
 
+<!-- Performance Hints -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="dns-prefetch" href="https://calendly.com">
 
-<!-- Google Analytics Placeholder -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXX');
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
 --bg:#0B0F19;
---glass:rgba(255,255,255,0.06);
---border:rgba(255,255,255,0.12);
+--surface:#111827;
 --text:#F9FAFB;
 --muted:#9CA3AF;
 --primary:#3B82F6;
+--border:#1F2937;
+}
+
+body.light{
+--bg:#F9FAFB;
+--surface:#FFFFFF;
+--text:#111827;
+--muted:#6B7280;
+--primary:#2563EB;
+--border:#E5E7EB;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Inter',sans-serif;
-background:linear-gradient(160deg,#0B0F19,#111827);
+background:var(--bg);
 color:var(--text);
 overflow-x:hidden;
+transition:.3s ease;
 }
 
-.container{max-width:1150px;margin:0 auto;padding:0 32px;}
-section{padding:140px 0;}
-
-.glass{
-background:var(--glass);
-backdrop-filter:blur(20px);
-border:1px solid var(--border);
-border-radius:28px;
-padding:60px;
+canvas{
+position:fixed;
+top:0;left:0;
+z-index:-1;
 }
 
-h1{
-font-size:clamp(52px,6vw,78px);
-line-height:1.05;
-margin-bottom:30px;
+.container{
+max-width:1100px;
+margin:0 auto;
+padding:0 32px;
 }
 
-h2{
-font-size:44px;
-margin-bottom:30px;
+section{
+padding:140px 0;
+min-height:300px; /* CLS stability */
 }
 
-p{font-size:20px;color:var(--muted);}
+nav{
+position:fixed;
+top:0;left:0;right:0;
+background:rgba(11,15,25,.85);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--border);
+padding:20px 0;
+z-index:1000;
+}
 
-.highlight{color:var(--primary);}
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{font-weight:800;font-size:18px;}
+
+.toggle{cursor:pointer;color:var(--muted);font-size:14px;}
 
 .btn{
 display:inline-block;
@@ -78,23 +93,53 @@ transition:.25s ease;
 
 .btn:hover{
 transform:translateY(-4px);
-box-shadow:0 20px 50px rgba(59,130,246,.4);
+box-shadow:0 20px 50px rgba(59,130,246,.35);
 }
 
-.hero{padding-top:220px;padding-bottom:180px;}
+.hero{
+padding-top:220px;
+padding-bottom:180px;
+}
+
+h1{
+font-size:clamp(52px,6vw,76px);
+line-height:1.05;
+margin-bottom:30px;
+}
+
+h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+color:var(--muted);
+}
+
+.highlight{color:var(--primary);}
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:40px;
+margin-top:80px;
 }
 
 .card{
-background:var(--glass);
+background:rgba(255,255,255,.03);
 border:1px solid var(--border);
 border-radius:24px;
 padding:50px;
-transition:.35s ease;
+transition:.3s ease;
+transform:translateY(20px);
+opacity:0;
+min-height:160px;
+}
+
+.card.visible{
+transform:translateY(0);
+opacity:1;
 }
 
 .card:hover{
@@ -102,83 +147,116 @@ transform:translateY(-8px);
 border-color:var(--primary);
 }
 
-/* Pricing Comparison */
-.comparison{
-overflow-x:auto;
+.parallax{
+transform:translateY(var(--offset,0px));
+transition:transform .1s linear;
 }
 
-.comparison table{
+/* ROI Slider */
+
+.roi-box{
+background:var(--surface);
+border-radius:30px;
+padding:60px;
+border:1px solid var(--border);
+}
+
+.roi-row{
+margin:25px 0;
+}
+
+input[type=range]{
 width:100%;
-border-collapse:collapse;
-min-width:700px;
 }
 
-.comparison th,.comparison td{
-padding:18px;
-border-bottom:1px solid var(--border);
-text-align:center;
-}
-
-.comparison th{
+.value{
+font-weight:700;
 color:var(--primary);
 }
 
-/* Testimonials */
-.carousel{
-position:relative;
-max-width:800px;
-margin:0 auto;
-text-align:center;
-}
+/* Pricing Toggle */
 
-.testimonial{
-opacity:0;
-transition:opacity .6s ease;
-position:absolute;
-inset:0;
-}
-
-.testimonial.active{
-opacity:1;
-position:relative;
-}
-
-.sticky-cta{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:linear-gradient(90deg,#2563EB,#4F46E5);
-padding:18px;
+.toggle-switch{
 display:flex;
-justify-content:center;
 gap:20px;
-z-index:3000;
+margin-bottom:40px;
 }
 
-footer{
-padding:80px 0;
-text-align:center;
+.toggle-switch button{
+background:var(--surface);
+border:1px solid var(--border);
+padding:10px 20px;
+border-radius:12px;
+cursor:pointer;
+color:var(--text);
+}
+
+.toggle-switch button.active{
+background:var(--primary);
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.price-card{
+background:rgba(255,255,255,.03);
+border:1px solid var(--border);
+border-radius:24px;
+padding:50px;
+min-height:260px;
+}
+
+/* Modal */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.modal-content{
+background:var(--surface);
+border-radius:24px;
+width:90%;
+max-width:700px;
+padding:40px;
+}
+
+.close{
+text-align:right;
+cursor:pointer;
 color:var(--muted);
-margin-bottom:80px;
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero container">
-<div class="glass">
+<canvas id="network"></canvas>
+
+<nav>
+<div class="container nav-inner">
+<div class="logo">Sartorial AI</div>
+<div style="display:flex;gap:20px;align-items:center;">
+<div class="toggle" onclick="toggleTheme()">Toggle Mode</div>
+<a href="#" class="btn" onclick="openModal()">See Your AI Demo</a>
+</div>
+</div>
+</nav>
+
+<section class="hero container parallax">
 <h1>Turn Every Inquiry Into <span class="highlight">Booked Revenue</span></h1>
 <p>AI voice agents, website chat and automated follow-up systems that respond instantly and convert demand without adding staff.</p>
-<div style="margin-top:40px;">
-<a href="#pricing" class="btn" onclick="track('Hero_Click')">See Your AI Demo</a>
-</div>
-</div>
 </section>
 
 <section class="container">
-<h2>Core AI Systems</h2>
+<h2>AI Revenue Infrastructure</h2>
 <div class="grid">
 <div class="card">AI Voice Agents</div>
 <div class="card">AI Website Chat</div>
@@ -187,62 +265,37 @@ margin-bottom:80px;
 </div>
 </section>
 
-<section id="pricing" class="container">
-<h2>Deployment Strategies</h2>
-<div class="comparison glass">
-<table>
-<tr>
-<th>Features</th>
-<th>Launch</th>
-<th>Scale</th>
-<th>Dominance</th>
-</tr>
-<tr>
-<td>AI Voice</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>AI Chat</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>Advanced Automation</td>
-<td></td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>Multi Location</td>
-<td></td>
-<td></td>
-<td>✓</td>
-</tr>
-<tr>
-<td>Dedicated Strategist</td>
-<td></td>
-<td></td>
-<td>✓</td>
-</tr>
-</table>
+<section class="container">
+<h2>ROI Calculator</h2>
+<div class="roi-box">
+<div class="roi-row">
+Monthly Calls: <span class="value" id="callsVal">100</span>
+<input type="range" min="10" max="1000" value="100" id="calls">
+</div>
+<div class="roi-row">
+Average Job Value ($): <span class="value" id="valueVal">500</span>
+<input type="range" min="100" max="5000" value="500" id="value">
+</div>
+<div class="roi-row">
+Close Rate (%): <span class="value" id="closeVal">30</span>
+<input type="range" min="5" max="80" value="30" id="close">
+</div>
+<h3>Estimated Monthly Revenue: $<span class="value" id="result">15000</span></h3>
 </div>
 </section>
 
 <section class="container">
-<h2>Client Results</h2>
-<div class="carousel">
-<div class="testimonial active">
-<p>"38% increase in booked calls within 90 days."</p>
+<h2>Deployment Strategies</h2>
+
+<div class="toggle-switch">
+<button class="active" onclick="switchPricing('monthly',this)">Monthly</button>
+<button onclick="switchPricing('annual',this)">Annual</button>
 </div>
-<div class="testimonial">
-<p>"31% more qualified consultations in 120 days."</p>
-</div>
-<div class="testimonial">
-<p>"28% increase in appointment bookings after deployment."</p>
-</div>
+
+<div class="pricing">
+<div class="price-card" id="launch">$1500</div>
+<div class="price-card" id="scale">$3500</div>
+<div class="price-card" id="dominate">Custom</div>
 </div>
 </section>
 
@@ -250,26 +303,95 @@ margin-bottom:80px;
 © 2026 Sartorial AI | info@sartorialai.co | 757-573-8193
 </footer>
 
-<div class="sticky-cta">
-<span>Ready to modernize?</span>
-<a href="#pricing" class="btn" onclick="track('Sticky_Click')">Start Now</a>
+<!-- Calendly Modal -->
+<div class="modal" id="demoModal">
+<div class="modal-content">
+<div class="close" onclick="closeModal()">Close</div>
+<iframe src="https://calendly.com/YOUR-LINK" width="100%" height="600" frameborder="0"></iframe>
+</div>
 </div>
 
 <script>
-function track(name){
-if(typeof gtag !== 'undefined'){
-gtag('event', name);
+// Remove canvas on mobile
+if(window.innerWidth > 768){
+const canvas=document.getElementById('network');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<50;i++){
+particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
+ctx.beginPath();ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="#3B82F6";ctx.fill();
+});
+requestAnimationFrame(animate);
+}
+animate();
+}
+
+// Scroll animation
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+});
+document.querySelectorAll('.card').forEach(el=>observer.observe(el));
+
+// ROI Calculator
+function calculate(){
+let calls=parseInt(document.getElementById('calls').value);
+let value=parseInt(document.getElementById('value').value);
+let close=parseInt(document.getElementById('close').value)/100;
+document.getElementById('callsVal').innerText=calls;
+document.getElementById('valueVal').innerText=value;
+document.getElementById('closeVal').innerText=close*100;
+document.getElementById('result').innerText=(calls*value*close).toLocaleString();
+}
+document.querySelectorAll('#calls,#value,#close').forEach(el=>el.addEventListener('input',calculate));
+calculate();
+
+// Pricing toggle
+function switchPricing(type,btn){
+document.querySelectorAll('.toggle-switch button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+if(type==="annual"){
+document.getElementById('launch').innerText="$15,000 / year";
+document.getElementById('scale').innerText="$35,000 / year";
+}else{
+document.getElementById('launch').innerText="$1500 / month";
+document.getElementById('scale').innerText="$3500 / month";
 }
 }
 
-// Carousel
-let index=0;
-const testimonials=document.querySelectorAll('.testimonial');
-setInterval(()=>{
-testimonials[index].classList.remove('active');
-index=(index+1)%testimonials.length;
-testimonials[index].classList.add('active');
-},4000);
+// Theme
+function toggleTheme(){
+document.body.classList.toggle("light");
+localStorage.setItem("theme",document.body.classList.contains("light")?"light":"dark");
+}
+if(localStorage.getItem("theme")==="light"){document.body.classList.add("light");}
+
+// Modal
+function openModal(){document.getElementById("demoModal").style.display="flex";}
+function closeModal(){document.getElementById("demoModal").style.display="none";}
+
+// Subtle Parallax
+window.addEventListener('scroll',()=>{
+document.querySelectorAll('.parallax').forEach(el=>{
+let offset=window.pageYOffset * 0.1;
+el.style.setProperty('--offset', offset + "px");
+});
+});
 </script>
 
 </body>
