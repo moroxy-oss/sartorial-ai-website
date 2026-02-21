@@ -1,180 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sartorial AI | Tailored AI Front-Line Systems</title>
+<title>Sartorial AI | Enterprise AI Front Lines</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-* { box-sizing:border-box; margin:0; padding:0; }
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background:#ffffff;
-  color:#000000;
-  line-height:1.6;
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;color:#000;background:#fff;line-height:1.6;}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #E6E6E6;z-index:100;}
+.container{width:90%;max-width:1200px;margin:auto;}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:20px 0;}
+nav a{margin-left:20px;text-decoration:none;color:#000;font-weight:500;}
+.btn-primary{background:#007AFF;color:#fff;padding:12px 22px;border-radius:6px;text-decoration:none;}
+.btn-primary:hover{background:#0066D6;}
+.btn-outline{border:1px solid #007AFF;color:#007AFF;padding:10px 18px;border-radius:6px;text-decoration:none;}
+section{padding:100px 0;}
+.hero{padding:140px 0;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-visual{height:320px;background:#F5F7FA;border-radius:8px;}
+h1{font-size:48px;font-weight:700;margin-bottom:20px;}
+h2{font-size:34px;font-weight:600;margin-bottom:20px;}
+h3{font-size:22px;font-weight:600;margin-bottom:12px;}
+.lead{font-size:18px;color:#4A4A4A;margin-bottom:25px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px;}
+.card{border:1px solid #E6E6E6;padding:30px;border-radius:8px;}
+.center{text-align:center;}
+.dark{background:#000;color:#fff;}
+.dark .lead{color:#ddd;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px;}
+.pricing-card{border:1px solid #E6E6E6;padding:30px;border-radius:8px;text-align:center;}
+.footer{padding:60px 0;border-top:1px solid #E6E6E6;}
+html{scroll-behavior:smooth;}
+@media(max-width:900px){
+  .hero-grid,.grid-3,.pricing-grid{grid-template-columns:1fr;}
+  h1{font-size:36px;}
 }
-
-.container {
-  width:90%;
-  max-width:1200px;
-  margin:0 auto;
-}
-
-header {
-  position:sticky;
-  top:0;
-  background:#ffffff;
-  border-bottom:1px solid #E6E6E6;
-  padding:20px 0;
-  z-index:1000;
-}
-
-.nav-inner {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo {
-  font-weight:700;
-  font-size:20px;
-}
-
-nav a {
-  margin-left:25px;
-  text-decoration:none;
-  color:#000;
-  font-weight:500;
-}
-
-.btn-primary {
-  background:#007AFF;
-  color:#fff;
-  padding:12px 22px;
-  border-radius:6px;
-}
-
-.btn-primary:hover {
-  background:#0066D6;
-}
-
-.btn-outline {
-  border:1px solid #007AFF;
-  color:#007AFF;
-  padding:10px 18px;
-  border-radius:6px;
-}
-
-section {
-  padding:100px 0;
-}
-
-.hero {
-  padding:140px 0;
-}
-
-.hero-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-
-.hero-visual {
-  height:320px;
-  background:#F5F7FA;
-  border-radius:8px;
-}
-
-h1 {
-  font-size:48px;
-  font-weight:700;
-  margin-bottom:20px;
-}
-
-h2 {
-  font-size:34px;
-  font-weight:600;
-  margin-bottom:20px;
-}
-
-h3 {
-  font-size:22px;
-  font-weight:600;
-  margin-bottom:12px;
-}
-
-.lead {
-  font-size:18px;
-  color:#4A4A4A;
-  margin-bottom:25px;
-}
-
-.grid-3 {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-  margin-top:50px;
-}
-
-.card {
-  border:1px solid #E6E6E6;
-  padding:35px;
-  border-radius:8px;
-  transition:0.2s ease;
-}
-
-.card:hover {
-  transform:translateY(-5px);
-}
-
-.center {
-  text-align:center;
-}
-
-.dark {
-  background:#000000;
-  color:#ffffff;
-}
-
-.dark .lead {
-  color:#dddddd;
-}
-
-.footer {
-  padding:60px 0;
-  border-top:1px solid #E6E6E6;
-}
-
-.footer-grid {
-  display:flex;
-  justify-content:space-between;
-}
-
-html {
-  scroll-behavior:smooth;
-}
-
-@media(max-width:900px) {
-  .hero-grid,
-  .grid-3 {
-    grid-template-columns:1fr;
-  }
-  h1 { font-size:36px; }
-}
-
 </style>
 </head>
 <body>
 
 <header>
   <div class="container nav-inner">
-    <div class="logo">SARTORIAL AI</div>
+    <div class="logo"><strong>SARTORIAL AI</strong></div>
     <nav>
       <a href="#home">Home</a>
       <a href="#solutions">Solutions</a>
+      <a href="#whyuse">Why Use</a>
+      <a href="#pricing">Pricing</a>
       <a href="#engagement">Engagement</a>
       <a href="https://app.sartorialai.com" target="_blank" class="btn-outline">Client Login</a>
       <a href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" class="btn-primary">Book Strategy Call</a>
@@ -190,7 +63,7 @@ html {
       <p class="lead">
         Enterprise-grade intake, triage, scheduling, and follow-up agents deployed with structure, guardrails, and measurable impact.
       </p>
-      <a href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" class="btn-primary">Book Strategy Call</a>
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn-primary">Book Strategy Call</a>
     </div>
     <div class="hero-visual"></div>
   </div>
@@ -199,107 +72,86 @@ html {
 <section>
   <div class="container center">
     <h2>One operating system for intake, follow-up, and front-line communication.</h2>
-    <p class="lead">
-      We build structured AI workspaces that extend your team without replacing professional judgment.
-    </p>
+    <p class="lead">We build structured AI workspaces that extend your team without replacing professional judgment.</p>
   </div>
 
   <div class="container grid-3">
-    <div class="card">
-      <h3>AI Intake & Triage</h3>
-      <p>Capture structured details and route by service line, urgency, and qualification rules you define.</p>
-    </div>
-    <div class="card">
-      <h3>AI Scheduling & Coordination</h3>
-      <p>Offer availability within guardrails. Automate confirmations and reduce no-shows.</p>
-    </div>
-    <div class="card">
-      <h3>AI Follow-Up & Nurture</h3>
-      <p>Keep consults and opportunities from going cold with consistent, on-brand sequences.</p>
-    </div>
+    <div class="card"><h3>AI Intake & Triage</h3><p>Capture structured details and route by service line, urgency, and qualification rules you define.</p></div>
+    <div class="card"><h3>AI Scheduling & Coordination</h3><p>Offer availability within guardrails. Automate confirmations and reduce no-shows.</p></div>
+    <div class="card"><h3>AI Follow-Up & Nurture</h3><p>Keep consults and opportunities from going cold with consistent, on-brand sequences.</p></div>
   </div>
 </section>
 
-<section class="dark">
+<!-- WHY USE SECTION -->
+<section id="whyuse">
   <div class="container center">
-    <h2>If your front line is your bottleneck, we turn it into your competitive edge.</h2>
-    <p class="lead">Structured deployment. Controlled rollout. Enterprise confidence.</p>
-    <a href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" class="btn-primary">Book Strategy Call</a>
+    <h2>Why Use Sartorial AI</h2>
+    <p class="lead">Speed to intelligent response drives engagement — and structured follow-up fuels growth.</p>
   </div>
-</section>
-
-<!-- SOLUTIONS -->
-<section id="solutions">
-  <div class="container center">
-    <h2>Built for high-trust service environments.</h2>
-    <p class="lead">Designed for regulated industries where every interaction shapes reputation and revenue.</p>
-  </div>
-
   <div class="container grid-3">
-    <div class="card">
-      <h3>Law & Professional Services</h3>
-      <p>Structured intake and workflow automation. Judgment remains with licensed professionals.</p>
+    <div class="card"><h3>Missed Opportunities Cost Growth</h3><p>Most leads drop off if there’s no immediate response. Sartorial AI responds instantly to every inquiry.</p></div>
+    <div class="card"><h3>Consistent Conversations Win Clients</h3><p>Multiple touchpoints increase conversion — and our agents keep every interaction aligned to your brand voice.</p></div>
+    <div class="card"><h3>Automated Workflows Build Trust</h3><p>Structured follow-ups and prompt scheduling build credibility and reduce friction in your client journeys.</p></div>
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section id="pricing" class="dark">
+  <div class="container center">
+    <h2>Pricing Plans</h2>
+    <p class="lead">Simple, transparent plans that scale with your business. Starting at $397/month. :contentReference[oaicite:2]{index=2}</p>
+  </div>
+  <div class="container pricing-grid">
+    <div class="pricing-card">
+      <h3>Starter</h3>
+      <p><strong>$397/mo</strong></p>
+      <p>Basic intake, scheduling, and follow-up automation.</p>
+      <p>Secure workspace</p>
+      <p>Email & chat support</p>
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn-primary">Choose Starter</a>
     </div>
-    <div class="card">
-      <h3>Medical & Specialty Clinics</h3>
-      <p>New-patient coordination, appointment logistics, escalation aligned to compliance standards.</p>
+    <div class="pricing-card">
+      <h3>Professional</h3>
+      <p><strong>$797/mo</strong></p>
+      <p>All Starter + advanced routing and communications.</p>
+      <p>Multi-channel engagement</p>
+      <p>Priority support</p>
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn-primary">Choose Professional</a>
     </div>
-    <div class="card">
-      <h3>Coaching & Advisory Firms</h3>
-      <p>Discovery flows, enrollment sequences, and premium front-line communication systems.</p>
+    <div class="pricing-card">
+      <h3>Enterprise</h3>
+      <p><strong>Custom</strong></p>
+      <p>Full stewarded deployment + ongoing optimization.</p>
+      <p>Dedicated strategist</p>
+      <p>24/7 support</p>
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn-primary">Discuss Enterprise</a>
     </div>
   </div>
 </section>
 
 <!-- ENGAGEMENT -->
 <section id="engagement">
-  <div class="container center">
-    <h2>Engagement models tailored to your readiness.</h2>
-  </div>
-
+  <div class="container center"><h2>Engagement models tailored to your readiness.</h2></div>
   <div class="container grid-3">
-    <div class="card">
-      <h3>Essentials Workspace</h3>
-      <p>Secure AI workspace with guided setup for leaders exploring controlled deployment.</p>
-    </div>
-    <div class="card">
-      <h3>Guided Deployment</h3>
-      <p>Done-for-you intake and communications system for priority journeys.</p>
-    </div>
-    <div class="card">
-      <h3>Stewarded AI Front Line</h3>
-      <p>Ongoing management, QA, and expansion across service lines and locations.</p>
-    </div>
+    <div class="card"><h3>Essentials Workspace</h3><p>Secure AI workspace with guided setup for controlled deployment.</p></div>
+    <div class="card"><h3>Guided Deployment</h3><p>Done-for-you intake and communication systems with optimization cycles.</p></div>
+    <div class="card"><h3>Stewarded AI Front Line</h3><p>Ongoing QA, monitoring, and strategic expansion across service lines.</p></div>
   </div>
-</section>
-
-<section class="dark">
   <div class="container center">
-    <h2>See what an AI front line would look like inside your organization.</h2>
-    <p class="lead">In one working session, we map your critical journey and define a structured rollout plan.</p>
-    <a href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" class="btn-primary">Book Strategy Call</a>
+    <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn-primary">Book Strategy Call</a>
   </div>
 </section>
 
 <footer class="footer">
   <div class="container footer-grid">
-    <div>
-      <h3>Sartorial AI</h3>
-      <p>Enterprise-grade AI front-line systems.</p>
-    </div>
+    <div><h3>Sartorial AI</h3><p>Enterprise-grade AI front-line systems.</p></div>
     <div>
       <a href="#home">Home</a><br>
       <a href="#solutions">Solutions</a><br>
-      <a href="#engagement">Engagement</a>
+      <a href="#pricing">Pricing</a>
     </div>
   </div>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
