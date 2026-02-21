@@ -1,912 +1,1279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-Powered Front Desk for Home Services, Legal Practices & Medical Offices. Stop losing revenue to missed calls, unqualified leads, and no-shows.">
-    <title>Sartorial AI - AI Front Desk for Home Services, Legal & Medical</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary-color: #1a1a2e;
-            --secondary-color: #16213e;
-            --accent-color: #0f3460;
-            --highlight-color: #e94560;
-            --text-light: #ffffff;
-            --text-muted: #a8a8a8;
-            --card-bg: #1f1f3a;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-light);
-            background: var(--primary-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Navigation */
-        nav {
-            background: var(--secondary-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-light);
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            color: var(--highlight-color);
-        }
-        
-        .cta-button {
-            background: var(--highlight-color);
-            color: var(--text-light);
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 4rem 0;
-            text-align: center;
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            color: var(--highlight-color);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .stat-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            min-width: 280px;
-            text-align: left;
-        }
-        
-        .stat-card h3 {
-            color: var(--highlight-color);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-        
-        /* Why Use Section */
-        .why-use {
-            padding: 4rem 0;
-            background: var(--primary-color);
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--text-light);
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .benefit-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
-        }
-        
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--highlight-color);
-        }
-        
-        .benefit-card .stat {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--highlight-color);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .benefit-card p {
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-        
-        /* Industries Section */
-        .industries {
-            padding: 4rem 0;
-            background: var(--secondary-color);
-        }
-        
-        .industry-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .tab-button {
-            padding: 1rem 2rem;
-            background: var(--accent-color);
-            border: none;
-            color: var(--text-light);
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.3s;
-        }
-        
-        .tab-button:hover, .tab-button.active {
-            background: var(--highlight-color);
-            transform: translateY(-2px);
-        }
-        
-        .industry-content {
-            display: none;
-        }
-        
-        .industry-content.active {
-            display: block;
-        }
-        
-        .industry-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .feature-item {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--highlight-color);
-        }
-        
-        .feature-item h4 {
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-        
-        .feature-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 4rem 0;
-            background: var(--primary-color);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .pricing-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
-            border-color: var(--highlight-color);
-        }
-        
-        .pricing-card.featured {
-            border-color: var(--highlight-color);
-            position: relative;
-        }
-        
-        .pricing-card.featured::before {
-            content: "MOST POPULAR";
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--highlight-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-        
-        .pricing-card .subtitle {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            min-height: 40px;
-        }
-        
-        .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--highlight-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .pricing-card .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-        
-        .features-list li {
-            padding: 0.5rem 0;
-            color: var(--text-muted);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .features-list li::before {
-            content: "✓";
-            color: var(--highlight-color);
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-        }
-        
-        .vertical-examples {
-            background: var(--accent-color);
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-            font-size: 0.85rem;
-        }
-        
-        .vertical-examples h4 {
-            color: var(--highlight-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .vertical-examples ul {
-            list-style: none;
-        }
-        
-        .vertical-examples li {
-            padding: 0.25rem 0;
-            color: var(--text-muted);
-        }
-        
-        /* Security Section */
-        .security {
-            padding: 4rem 0;
-            background: var(--secondary-color);
-        }
-        
-        .security-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .security-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .security-card h3 {
-            color: var(--highlight-color);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .security-card ul {
-            list-style: none;
-            color: var(--text-muted);
-        }
-        
-        .security-card li {
-            padding: 0.5rem 0;
-            font-size: 0.95rem;
-        }
-        
-        /* Service Packages */
-        .services {
-            padding: 4rem 0;
-            background: var(--primary-color);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .service-card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--highlight-color);
-        }
-        
-        .service-card h3 {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .service-card .price-range {
-            color: var(--highlight-color);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .service-card p {
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--secondary-color);
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid var(--accent-color);
-        }
-        
-        footer p {
-            color: var(--text-muted);
-        }
-        
-        footer a {
-            color: var(--highlight-color);
-            text-decoration: none;
-        }
-        
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                padding: 1rem 0;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            nav .container {
-                justify-content: space-between;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .industry-tabs {
-                flex-direction: column;
-            }
-            
-            .tab-button {
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Sartorial AI – Front Desk, Content Engine, Pipeline Engine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sartorial AI – AI Front Desk, Content Engine, and Pipeline Engine for home services, legal practices, and medical offices." />
+  <style>
+    :root {
+      --bg-dark: #0b1020;
+      --bg: #111827;
+      --bg-soft: #1f2937;
+      --card: #111827;
+      --accent: #e94560;
+      --accent-soft: rgba(233,69,96,0.15);
+      --accent-strong: #f97373;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --primary: #0f3460;
+      --primary-soft: rgba(15,52,96,0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1f2937 0, #050816 55%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: rgba(15, 23, 42, 0.9);
+      border-bottom: 1px solid #111827;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: radial-gradient(circle at 30% 30%, #e94560, #0f3460);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-outline {
+      border-color: #374151;
+      color: var(--muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f97373);
+      color: #0b1020;
+      box-shadow: 0 12px 30px rgba(233, 69, 96, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(233, 69, 96, 0.6);
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 4.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--accent-strong);
+      background: rgba(15,52,96,0.4);
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem 0.2rem 0.3rem;
+      margin-bottom: 0.9rem;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--accent), #0f3460);
+      font-size: 0.65rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-vertical-toggle {
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #020617;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      padding: 0.2rem;
+      font-size: 0.8rem;
+    }
+
+    .vertical-chip {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .vertical-chip.active {
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-metric span {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .hero-right-card {
+      background: radial-gradient(circle at top left, rgba(233,69,96,0.15), rgba(15,23,42,0.9));
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148,163,184,0.35);
+      padding: 1.4rem 1.4rem 1.2rem;
+      box-shadow: 0 18px 60px rgba(15,23,42,0.9);
+      font-size: 0.85rem;
+    }
+
+    .hero-right-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .hero-right-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.6);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--muted);
+    }
+
+    .chat-bubble {
+      border-radius: 0.9rem;
+      padding: 0.55rem 0.7rem;
+      margin-bottom: 0.55rem;
+      max-width: 100%;
+    }
+
+    .chat-bubble.ai {
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.3);
+    }
+
+    .chat-bubble.user {
+      background: rgba(233,69,96,0.18);
+      border: 1px solid rgba(248,113,113,0.6);
+      margin-left: 1.7rem;
+    }
+
+    .chat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-right-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.8rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-top: 0.7rem;
+      font-size: 0.7rem;
+    }
+
+    .hero-badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.7);
+    }
+
+    /* SECTION GENERIC */
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      color: var(--accent-strong);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    /* FEATURES (FRONT DESK) */
+    .features-grid {
+      margin-top: 2.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(15,23,42,0.9);
+      border-radius: 1rem;
+      padding: 1.15rem 1.15rem 1.1rem;
+      border: 1px solid rgba(31,41,55,0.9);
+      box-shadow: 0 16px 40px rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+    }
+
+    .feature-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .feature-text {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* HOW IT WORKS */
+    .how-grid {
+      margin-top: 2.1rem;
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
+      gap: 2rem;
+    }
+
+    .steps {
+      display: grid;
+      gap: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .step {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: rgba(15,23,42,0.9);
+      padding: 0.9rem 1rem;
+    }
+
+    .step-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .how-image {
+      border-radius: 1rem;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: radial-gradient(circle at top left, rgba(233,69,96,0.12), rgba(15,23,42,0.95));
+      padding: 1.1rem 1.1rem 0.9rem;
+      font-size: 0.86rem;
+    }
+
+    .how-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--muted);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .how-snippet {
+      border-radius: 0.8rem;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(31,41,55,0.95);
+      padding: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .how-snippet h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    /* GROWTH ENGINES (CONTENT + PIPELINE) */
+    .engines-grid {
+      margin-top: 2.2rem;
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 1.5rem;
+    }
+
+    .engine-card {
+      border-radius: 1rem;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: rgba(15,23,42,0.95);
+      padding: 1.2rem 1.25rem;
+      box-shadow: 0 14px 40px rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+    }
+
+    .engine-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.55rem;
+    }
+
+    .engine-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .engine-sub {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .engine-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .engine-list li::before {
+      content: "• ";
+      color: var(--accent-strong);
+    }
+
+    .engine-example {
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-radius: 0.7rem;
+      background: rgba(15,23,42,0.95);
+      border: 1px dashed rgba(148,163,184,0.4);
+      padding: 0.6rem 0.7rem;
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      margin-top: 2.3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pricing-card {
+      border-radius: 1rem;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(31,41,55,0.95);
+      padding: 1.4rem 1.3rem;
+      position: relative;
+      font-size: 0.9rem;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 20px 60px rgba(233,69,96,0.45);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -0.75rem;
+      right: 1.1rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
+    }
+
+    .pricing-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .pricing-sub {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .pricing-price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--accent-strong);
+    }
+
+    .pricing-period {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .pricing-list {
+      list-style: none;
+      margin: 0.7rem 0 0.9rem;
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .pricing-list li::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .pricing-addons {
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-radius: 0.6rem;
+      background: rgba(15,23,42,0.95);
+      border: 1px dashed rgba(148,163,184,0.4);
+      padding: 0.55rem 0.6rem;
+      margin-bottom: 0.7rem;
+    }
+
+    /* SECURITY & SERVICES & TESTIMONIALS (SHORTENED) */
+    .security-grid {
+      margin-top: 2.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.4rem;
+      font-size: 0.86rem;
+    }
+
+    .security-card {
+      border-radius: 1rem;
+      border: 1px solid rgba(31,41,55,0.95);
+      background: rgba(15,23,42,0.95);
+      padding: 1rem 1rem 0.95rem;
+    }
+
+    .security-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .security-card ul {
+      list-style: none;
+      color: var(--muted);
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .services-grid {
+      margin-top: 2.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .service-card {
+      border-radius: 1rem;
+      border: 1px solid rgba(31,41,55,0.95);
+      background: rgba(15,23,42,0.95);
+      padding: 1rem 1.1rem 0.9rem;
+    }
+
+    .service-card h3 {
+      font-size: 0.96rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-price {
+      font-size: 1rem;
+      color: var(--accent-strong);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .service-text {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .testimonials-strip {
+      margin-top: 2.3rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(31,41,55,0.95);
+      background: rgba(15,23,42,0.95);
+      padding: 1.1rem 1.2rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .testimonials-strip strong {
+      color: var(--accent-strong);
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      text-align: center;
+      padding: 3.2rem 0 3.4rem;
+      background: radial-gradient(circle at top, rgba(233,69,96,0.15), rgba(15,23,42,0.9));
+      border-top: 1px solid #1f2937;
+      border-bottom: 1px solid #1f2937;
+      margin-top: 3.5rem;
+    }
+
+    .final-cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .final-cta p {
+      max-width: 34rem;
+      margin: 0 auto 1.3rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.6rem 0 1.9rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: #020617;
+      border-top: 1px solid #111827;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.9rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right-card {
+        order: -1;
+      }
+
+      .how-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .engines-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-actions {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0.6rem;
+        gap: 0.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#home" class="logo">SARTORIAL AI</a>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#why">Why Use</a></li>
-                <li><a href="#industries">Industries</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#security">Security</a></li>
-                <li><a href="https://calendly.com/YOUR-CALENDLY-LINK" class="cta-button">Book Strategy Call</a></li>
-            </ul>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        <div class="nav-left">
+          <div class="brand-mark">SA</div>
+          <div class="brand-name">SARTORIAL AI</div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Your AI Front Desk That Works <span>24/7</span></h1>
-            <p>Purpose-built for Home Services, Legal Practices & Medical Offices. Stop losing $10K+ monthly to missed calls, unqualified leads, and no-shows.</p>
-            <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="cta-button">Book Your Strategy Call</a>
-            
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <h3>🏠 Home Services</h3>
-                    <p>Home service businesses lose <strong>$12K+ monthly</strong> from missed emergency calls after hours</p>
-                </div>
-                <div class="stat-card">
-                    <h3>⚖️ Legal Practices</h3>
-                    <p>Law firms waste <strong>40% of intake calls</strong> on unqualified leads instead of billable work</p>
-                </div>
-                <div class="stat-card">
-                    <h3>🏥 Medical Offices</h3>
-                    <p>Medical practices lose <strong>$150 per patient no-show</strong> with average 18% no-show rate</p>
-                </div>
-            </div>
+        <div class="nav-links" id="navLinks">
+          <a href="#frontdesk">Front Desk</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#engines">Content & Pipeline</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#security">Security</a>
         </div>
-    </section>
-
-    <!-- Why Use Section -->
-    <section id="why" class="why-use">
-        <div class="container">
-            <h2 class="section-title">Speed to Lead Drives Sales, and Reviews Close the Loop</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>Missed Calls = Lost Revenue</h3>
-                    <span class="stat">67%</span>
-                    <p>of customers hang up if they don't receive immediate assistance.</p>
-                    <span class="stat">85%</span>
-                    <p>of missed calls never call back. Your AI employee answers every call, instantly.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>More Conversations = Sales</h3>
-                    <span class="stat">92%</span>
-                    <p>of interactions happen over the phone.</p>
-                    <span class="stat">60%</span>
-                    <p>prefer speaking to a representative over voicemail. Our AI provides human-quality conversations 24/7.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>Reviews = Trust = More Sales</h3>
-                    <span class="stat">93%</span>
-                    <p>read online reviews before purchasing.</p>
-                    <span class="stat">89%</span>
-                    <p>read business responses when evaluating trust. Automated review generation and AI-powered responses included.</p>
-                </div>
-            </div>
+        <div class="nav-actions">
+          <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn btn-outline">Log In</a>
+          <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn btn-primary">Book Strategy Call</a>
         </div>
-    </section>
+        <div class="nav-toggle" onclick="toggleNav()">☰</div>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Industries Section -->
-    <section id="industries" class="industries">
-        <div class="container">
-            <h2 class="section-title">Industry-Specific Solutions</h2>
-            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 3rem;">Our AI agents are trained for your industry's unique workflows, compliance requirements, and customer expectations.</p>
-            
-            <div class="industry-tabs">
-                <button class="tab-button active" onclick="showIndustry('home-services')">Home Services</button>
-                <button class="tab-button" onclick="showIndustry('legal')">Legal Practices</button>
-                <button class="tab-button" onclick="showIndustry('medical')">Medical Offices</button>
+  <!-- HERO -->
+  <header class="hero" id="frontdesk">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <div class="eyebrow-pill">●</div>
+            AI Front Desk • Content • Pipeline
+          </div>
+          <h1 class="hero-title">Your AI Front Desk That Works 24/7</h1>
+          <p class="hero-sub">
+            Purpose-built for home services, legal practices, and medical offices. Sartorial AI answers every call, books appointments, runs your content, and keeps your pipeline full – without extra headcount.
+          </p>
+
+          <div class="hero-vertical-toggle">
+            <span style="padding-left:0.6rem; color:var(--muted);">I run a:</span>
+            <div class="vertical-chip active" data-vertical="home" onclick="setVertical('home')">Home Services Business</div>
+            <div class="vertical-chip" data-vertical="legal" onclick="setVertical('legal')">Law Firm</div>
+            <div class="vertical-chip" data-vertical="medical" onclick="setVertical('medical')">Medical Practice</div>
+          </div>
+
+          <p id="verticalText" class="hero-sub" style="font-size:0.9rem; margin-top:-0.7rem;">
+            Home service businesses lose over $12K each month from missed emergency calls and slow follow-up. Sartorial AI picks up every time, qualifies jobs, and books your on‑call techs.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn btn-primary">Book Strategy Call</a>
+            <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="hero-metric">
+              <span>3x</span>
+              More booked appointments from the same inbound volume
             </div>
-            
-            <!-- Home Services Tab -->
-            <div id="home-services" class="industry-content active">
-                <h3 style="text-align: center; margin-bottom: 1rem;">Home Services Solutions</h3>
-                <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">For plumbers, HVAC, electricians, contractors, and service professionals</p>
-                
-                <div class="industry-features">
-                    <div class="feature-item">
-                        <h4>24/7 Emergency Response</h4>
-                        <p>Never miss an emergency call again. AI answers after hours, qualifies urgency, and dispatches your on-call team with SMS notifications.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Automated Job Booking</h4>
-                        <p>AI checks technician availability, schedules appointments, and sends SMS confirmations to customers and your team.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Seasonal Surge Handling</h4>
-                        <p>Scale instantly during peak seasons (AC repairs in summer, heating in winter) without hiring temporary staff.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Payment & Follow-up</h4>
-                        <p>Automated payment reminders, invoice delivery, and review requests after job completion.</p>
-                    </div>
-                </div>
+            <div class="hero-metric">
+              <span>20+</span>
+              Hours saved weekly on calls, content, and follow-up
             </div>
-            
-            <!-- Legal Tab -->
-            <div id="legal" class="industry-content">
-                <h3 style="text-align: center; margin-bottom: 1rem;">Legal Practice Solutions</h3>
-                <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">For personal injury, family law, estate planning, and legal professionals</p>
-                
-                <div class="industry-features">
-                    <div class="feature-item">
-                        <h4>Intelligent Case Intake</h4>
-                        <p>AI pre-qualifies leads based on practice area, case type, and statute of limitations before attorney engagement.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Conflict Checking</h4>
-                        <p>Automated conflict screening and proper documentation ensures ethical compliance before consultation scheduling.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Attorney Calendar Sync</h4>
-                        <p>Seamless integration with legal calendar systems for consultation scheduling and court date management.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Secure Communication</h4>
-                        <p>AES-256 encryption and attorney-client privilege protections for all client communications.</p>
-                    </div>
-                </div>
+            <div class="hero-metric">
+              <span>18% → 6%</span>
+              No-show rate drop with intelligent reminders
             </div>
-            
-            <!-- Medical Tab -->
-            <div id="medical" class="industry-content">
-                <h3 style="text-align: center; margin-bottom: 1rem;">Medical Office Solutions</h3>
-                <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">For primary care, specialists, dental practices, and healthcare providers</p>
-                
-                <div class="industry-features">
-                    <div class="feature-item">
-                        <h4>HIPAA-Compliant Communication</h4>
-                        <p>SOC 2 Type II certified infrastructure with BAA available for full HIPAA compliance.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Insurance Verification</h4>
-                        <p>AI handles eligibility checks and pre-authorization before appointments to reduce administrative burden.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>No-Show Reduction</h4>
-                        <p>Multi-channel appointment reminders (call, SMS, email) reduce no-shows from 18% to under 6%.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Patient Triage & Routing</h4>
-                        <p>AI routes urgent cases appropriately while handling routine scheduling, prescription refills, and result notifications.</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">Simple, Transparent Pricing That Scales With You</h2>
-            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem;">Choose the plan that matches your business needs. All plans include AI voice employee, automated reviews with AI responses, and chat support.</p>
-            
-            <div class="pricing-grid">
-                <!-- Foundation Plan -->
-                <div class="pricing-card">
-                    <h3>Foundation</h3>
-                    <p class="subtitle">Perfect for single-location businesses and solopreneurs</p>
-                    <div class="price">$497<span>/month</span></div>
-                    <ul class="features-list">
-                        <li>AI Voice Employee (24/7)</li>
-                        <li>Reviews w/Automated AI Response</li>
-                        <li>CRM Integration</li>
-                        <li>Call Recording & Transcripts</li>
-                        <li>Email & Chat Support</li>
-                    </ul>
-                    <div class="vertical-examples">
-                        <h4>Industry Examples:</h4>
-                        <ul>
-                            <li>🏠 Basic call answering & scheduling</li>
-                            <li>⚖️ Initial consultation booking</li>
-                            <li>🏥 Appointment scheduling & reminders</li>
-                        </ul>
-                    </div>
-                    <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="cta-button" style="width: 100%; text-align: center; margin-top: 1rem; display: block;">Get Started →</a>
-                </div>
-                
-                <!-- Professional Plan (Featured) -->
-                <div class="pricing-card featured">
-                    <h3>Professional</h3>
-                    <p class="subtitle">Full omnichannel for growing practices and teams</p>
-                    <div class="price">$697<span>/month</span></div>
-                    <ul class="features-list">
-                        <li>Everything in Foundation</li>
-                        <li>AI Chat Employee</li>
-                        <li>AI Live Chat/Webchat</li>
-                        <li>2-Way SMS Texting</li>
-                        <li>Live Call Transfers</li>
-                        <li>Mobile App Access</li>
-                        <li>Multi-Channel Reporting</li>
-                    </ul>
-                    <div class="vertical-examples">
-                        <h4>Industry Examples:</h4>
-                        <ul>
-                            <li>🏠 Emergency dispatch via SMS to technicians</li>
-                            <li>⚖️ Lead qualification & case screening</li>
-                            <li>🏥 Insurance verification workflows</li>
-                        </ul>
-                    </div>
-                    <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="cta-button" style="width: 100%; text-align: center; margin-top: 1rem; display: block;">Get Started →</a>
-                </div>
-                
-                <!-- Enterprise Plan -->
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <p class="subtitle">Complete automation for multi-location operations</p>
-                    <div class="price">$997<span>/month</span></div>
-                    <ul class="features-list">
-                        <li>Everything in Professional</li>
-                        <li>AI Custom Actions & Workflows</li>
-                        <li>AI Appointment Booking & Sync</li>
-                        <li>AI Automated Newsletters</li>
-                        <li>Workflow Automation (n8n)</li>
-                        <li>Advanced Reporting & Analytics</li>
-                        <li>Priority Support & Optimization</li>
-                    </ul>
-                    <div class="vertical-examples">
-                        <h4>Industry Examples:</h4>
-                        <ul>
-                            <li>🏠 Maintenance agreement renewals</li>
-                            <li>⚖️ Document collection automation</li>
-                            <li>🏥 Patient reactivation campaigns</li>
-                        </ul>
-                    </div>
-                    <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="cta-button" style="width: 100%; text-align: center; margin-top: 1rem; display: block;">Get Started →</a>
-                </div>
+        <div>
+          <div class="hero-right-card">
+            <div class="hero-right-header">
+              <div>
+                <div class="hero-right-title">Sartorial AI Front Desk™</div>
+                <div style="font-size:0.75rem; color:var(--muted);">Live call + chat example</div>
+              </div>
+              <div class="pill">24/7 Coverage</div>
             </div>
-        </div>
-    </section>
 
-    <!-- Security & Compliance -->
-    <section id="security" class="security">
-        <div class="container">
-            <h2 class="section-title">Enterprise-Grade Security & Compliance</h2>
-            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 3rem;">Built on SOC 2 Type II certified infrastructure with industry-specific compliance frameworks.</p>
-            
-            <div class="security-grid">
-                <div class="security-card">
-                    <h3>🏥 Healthcare (HIPAA)</h3>
-                    <ul>
-                        <li>HIPAA compliance framework</li>
-                        <li>Business Associate Agreement (BAA) available</li>
-                        <li>AES-256 encryption at rest and in transit</li>
-                        <li>Audit logs for all PHI access</li>
-                        <li>99.9% uptime SLA</li>
-                    </ul>
-                </div>
-                
-                <div class="security-card">
-                    <h3>⚖️ Legal (Attorney-Client)</h3>
-                    <ul>
-                        <li>Attorney-client privilege protections</li>
-                        <li>AES-256 military-grade encryption</li>
-                        <li>Secure client portal access</li>
-                        <li>Conflict checking safeguards</li>
-                        <li>Ethical compliance documentation</li>
-                    </ul>
-                </div>
-                
-                <div class="security-card">
-                    <h3>🏠 Home Services (PCI DSS)</h3>
-                    <ul>
-                        <li>PCI DSS compliant payment processing</li>
-                        <li>Secure payment data handling</li>
-                        <li>Customer data protection</li>
-                        <li>Automated backup & recovery</li>
-                        <li>Role-based access controls</li>
-                    </ul>
-                </div>
-                
-                <div class="security-card">
-                    <h3>🔒 All Verticals</h3>
-                    <ul>
-                        <li>SOC 2 Type II certified infrastructure</li>
-                        <li>Multi-model AI redundancy</li>
-                        <li>Real-time threat monitoring</li>
-                        <li>Regular security audits</li>
-                        <li>GDPR & CCPA compliant</li>
-                    </ul>
-                </div>
+            <div class="chat-bubble ai">
+              <div class="chat-label">AI FRONT DESK</div>
+              Hi, thanks for calling Horizon Dental. How can I help you today?
             </div>
-        </div>
-    </section>
 
-    <!-- Service Packages -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Professional Services & Setup</h2>
-            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem;">Maximize ROI with our expert setup, optimization, and training services.</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Vertical-Specific Setup</h3>
-                    <span class="price-range">$2,500 - $5,000</span>
-                    <p>Custom workflow configuration, knowledge base setup, industry-specific script training, and CRM integration. Get fully operational in 7-10 business days.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Monthly Optimization</h3>
-                    <span class="price-range">$500 - $1,500/mo</span>
-                    <p>Performance review, script refinement, A/B testing, conversion optimization, and monthly strategy sessions to continuously improve results.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Team Training Sessions</h3>
-                    <span class="price-range">$500/session</span>
-                    <p>Onboard your staff on dashboard navigation, reporting features, AI employee management, and best practices for maximizing system effectiveness.</p>
-                </div>
+            <div class="chat-bubble user">
+              <div class="chat-label">CALLER</div>
+              I need to reschedule my cleaning and ask if you take my insurance.
             </div>
-        </div>
-    </section>
 
-    <!-- Final CTA -->
-    <section class="hero" style="padding: 3rem 0;">
-        <div class="container">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Stop Losing Revenue to Missed Opportunities?</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem;">Book a 30-minute strategy call to see how AI front-line systems can transform your business operations.</p>
-            <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2rem;">Schedule Your Free Strategy Call</a>
-        </div>
-    </section>
+            <div class="chat-bubble ai">
+              <div class="chat-label">AI FRONT DESK</div>
+              No problem. I can help with both. What’s your full name and preferred time window?
+            </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Sartorial AI. All rights reserved. | Powered by <a href="https://parallellabs.app/" target="_blank">Parallel AI</a> Enterprise Infrastructure</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">SOC 2 Type II Certified | HIPAA Compliant | PCI DSS Compliant</p>
-        </div>
-    </footer>
+            <div class="chat-bubble ai">
+              <div class="chat-label">AI FRONT DESK</div>
+              I’ve moved your appointment to next Thursday at 3:30pm, and yes, your insurance is in‑network. I’ve sent a confirmation text and email.
+            </div>
 
-    <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            <div class="hero-right-footer">
+              <span>Works for home services, legal, and medical.</span>
+              <span style="color:var(--accent-strong); font-weight:600;">No humans. No hold music.</span>
+            </div>
+
+            <div class="hero-badges">
+              <div class="hero-badge">AI Front Desk™</div>
+              <div class="hero-badge">Content Engine™</div>
+              <div class="hero-badge">Pipeline Engine™</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FRONT DESK FEATURES -->
+  <section>
+    <div class="container">
+      <div>
+        <div class="section-eyebrow">Sartorial AI Front Desk™</div>
+        <h2 class="section-title">Speed to Lead Drives Revenue – and Reviews Close the Loop</h2>
+        <p class="section-sub">
+          Your always-on front desk that answers every call, qualifies every opportunity, books appointments, and follows up – across phone, SMS, chat, and email.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-pill">1</div>
+          <h3>Missed Calls = Lost Revenue</h3>
+          <p class="feature-text">
+            67% of people hang up if no one picks up, and 85% never call back. Sartorial AI answers every call instantly, captures details, and routes or books on your behalf.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-pill">2</div>
+          <h3>More Conversations = More Sales</h3>
+          <p class="feature-text">
+            92% of interactions still happen over the phone. People prefer a real conversation over voicemail. Your AI front desk sounds natural, helpful, and always available.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-pill">3</div>
+          <h3>Appointments, Not Just Messages</h3>
+          <p class="feature-text">
+            Instead of “We’ll call you back,” Sartorial AI checks calendars, books or reschedules appointments, and sends confirmations in one flow.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-pill">4</div>
+          <h3>Reviews = Trust = More Sales</h3>
+          <p class="feature-text">
+            93% of people read reviews, and 89% read business responses. Automated review requests and AI‑written responses build a reputation that keeps new business coming.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container">
+      <div>
+        <div class="section-eyebrow">How It Works</div>
+        <h2 class="section-title">From First Contact to Booked Appointment in Four Steps</h2>
+        <p class="section-sub">
+          Sartorial AI combines your AI Front Desk™, Content Engine™, and Pipeline Engine™ into one unified growth system.
+        </p>
+      </div>
+
+      <div class="how-grid">
+        <div class="steps">
+          <div class="step">
+            <div class="step-label">Step 1</div>
+            <div class="step-title">Call, Text, or Chat Comes In</div>
+            <p class="step-text">
+              A patient, client, or homeowner reaches out via phone, SMS, webchat, or form. Sartorial AI is there 24/7, no hold music, no voicemail.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-label">Step 2</div>
+            <div class="step-title">AI Front Desk Qualifies & Answers Questions</div>
+            <p class="step-text">
+              The AI captures key details, answers FAQs, and follows your rules: which cases to accept, when to escalate to staff, and what counts as an emergency.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-label">Step 3</div>
+            <div class="step-title">Appointment Booked & Logged</div>
+            <p class="step-text">
+              Sartorial AI checks availability, books or reschedules, syncs with your calendar or practice/case system, and sends confirmations and reminders.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-label">Step 4</div>
+            <div class="step-title">Follow-Up, Reviews & Reactivation</div>
+            <p class="step-text">
+              After the visit, AI triggers review requests, follow‑up messages, and reactivation campaigns so your calendar and reputation stay full.
+            </p>
+          </div>
+        </div>
+
+        <div class="how-image">
+          <div class="how-tag">One Platform, Three Engines</div>
+          <div class="how-snippet">
+            <h4>Sartorial AI Front Desk™</h4>
+            <p>
+              Handles calls, chats, and texts – intake, triage, scheduling, rescheduling, and basic FAQs for home services, legal, and medical.
+            </p>
+          </div>
+          <div class="how-snippet">
+            <h4>Sartorial Content Engine™</h4>
+            <p>
+              Turns one strategy input into 1–3 months of posts, blogs, and email content so you stay visible and trusted without living in Canva.
+            </p>
+          </div>
+          <div class="how-snippet">
+            <h4>Sartorial Pipeline Engine™</h4>
+            <p>
+              Uses smart lists and AI personalization to find and warm up new opportunities, then hands engaged leads to your front desk to book.
+            </p>
+          </div>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.4rem;">
+            All powered by enterprise-grade AI infrastructure with CRM and calendar integrations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWTH ENGINES: CONTENT & PIPELINE -->
+  <section id="engines">
+    <div class="container">
+      <div>
+        <div class="section-eyebrow">Growth Engines</div>
+        <h2 class="section-title">Content & Pipeline That Feed Your Front Desk</h2>
+        <p class="section-sub">
+          Pair your AI Front Desk with always-on content and lead generation so the phone doesn’t just ring – it rings with the right people.
+        </p>
+      </div>
+
+      <div class="engines-grid">
+        <!-- Content Engine -->
+        <div class="engine-card">
+          <div class="engine-header">
+            <div>
+              <div class="engine-title">Sartorial Content Engine™</div>
+              <div style="font-size:0.8rem; color:var(--muted);">Always-on content studio powered by AI</div>
+            </div>
+            <div class="pill">Content Engine</div>
+          </div>
+          <p class="engine-sub">
+            Turn one strategy session into 1–3 months of content across all your channels – without hiring a content team.
+          </p>
+          <ul class="engine-list">
+            <li>Four AI specialists – Strategy, Copywriting, Customer Profile, and Visual agents that work together on your content.</li>
+            <li>Multi-platform output – LinkedIn, Facebook, Instagram, X, and blog content generated in a single workflow.</li>
+            <li>Brand voice training – We feed in your brand guidelines, past posts, and website so everything sounds like you.</li>
+            <li>1–3 months of content in minutes – Fill your calendar with posts, captions, and topics instead of starting from scratch.</li>
+            <li>20+ hours saved weekly – Agencies and busy owners cut production time while posting more consistently.</li>
+          </ul>
+          <div class="engine-example">
+            <strong>Example:</strong> A 3-location dental group turns one 45-minute strategy call into eight blog posts, forty social posts, and a month of patient education emails – all written in their voice.
+          </div>
+        </div>
+
+        <!-- Pipeline Engine -->
+        <div class="engine-card">
+          <div class="engine-header">
+            <div>
+              <div class="engine-title">Sartorial Pipeline Engine™</div>
+              <div style="font-size:0.8rem; color:var(--muted);">Done-for-you lead generation & outreach</div>
+            </div>
+            <div class="pill">Pipeline Engine</div>
+          </div>
+          <p class="engine-sub">
+            Always-full calendar without cold calling – AI-driven prospecting and outreach that fills your schedule with qualified opportunities.
+          </p>
+          <ul class="engine-list">
+            <li>Smart lead lists – Access to a large, AI-powered lead database to find people and businesses matching your ideal client.</li>
+            <li>Automatic enrichment – AI adds critical details (role, company, fit) so you talk to the right decision‑makers.</li>
+            <li>Multi-channel sequences – Email, LinkedIn, SMS, chat, and voice outreach orchestrated in unified workflows.</li>
+            <li>1:1 personalization at scale – Each message is tailored to the prospect using AI, not generic copy‑paste blasts.</li>
+            <li>Auto-refreshing lists – High-intent leads keep updating based on your target keywords and signals.</li>
+          </ul>
+          <div class="engine-example">
+            <strong>Examples:</strong> Home services: reach new homeowners in your service area. Legal: nurture referral partners and past clients. Medical: reactivate inactive patients and fill gaps in your calendar.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <div>
+        <div class="section-eyebrow">Pricing</div>
+        <h2 class="section-title">Simple Plans That Scale With Your Locations</h2>
+        <p class="section-sub">
+          All plans include Sartorial AI Front Desk™ – add Content Engine™ and Pipeline Engine™ as growth accelerators when you’re ready.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-name">Foundation</div>
+          <div class="pricing-sub">Perfect for single-location businesses and solopreneurs.</div>
+          <div class="pricing-price">$497 <span class="pricing-period">/ month</span></div>
+          <ul class="pricing-list">
+            <li>Sartorial AI Front Desk™ (voice) – 24/7</li>
+            <li>Reviews with AI-written responses</li>
+            <li>Basic CRM / calendar integration</li>
+            <li>Call recording & transcripts</li>
+            <li>Email & chat support</li>
+          </ul>
+          <div class="pricing-addons">
+            Add-ons available: Sartorial Content Engine™ campaigns and Sartorial Pipeline Engine™ starter campaigns.
+          </div>
+          <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn btn-primary" style="width:100%; justify-content:center;">Get Started</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-name">Professional</div>
+          <div class="pricing-sub">For growing home services, law firms, and clinics.</div>
+          <div class="pricing-price">$697 <span class="pricing-period">/ month</span></div>
+          <ul class="pricing-list">
+            <li>Everything in Foundation</li>
+            <li>AI chat & webchat assistant</li>
+            <li>2-way SMS and live call transfers</li>
+            <li>Mobile access for your team</li>
+            <li>Multi-channel reporting dashboard</li>
+          </ul>
+          <div class="pricing-addons">
+            Popular add-ons: Sartorial Content Engine™ monthly content calendar, Sartorial Pipeline Engine™ outbound or reactivation campaigns.
+          </div>
+          <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn btn-primary" style="width:100%; justify-content:center;">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-name">Enterprise</div>
+          <div class="pricing-sub">For multi-location and high-volume operations.</div>
+          <div class="pricing-price">$997 <span class="pricing-period">/ month</span></div>
+          <ul class="pricing-list">
+            <li>Everything in Professional</li>
+            <li>Custom actions & complex workflows</li>
+            <li>Advanced appointment logic & routing</li>
+            <li>Automated newsletters & campaigns</li>
+            <li>Workflow automation (e.g., n8n)</li>
+            <li>Priority optimization & support</li>
+          </ul>
+          <div class="pricing-addons">
+            Enterprise bundles available: full Sartorial Content Engine™ + Pipeline Engine™ with white-glove setup and optimization.
+          </div>
+          <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn btn-primary" style="width:100%; justify-content:center;">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY & SERVICES -->
+  <section id="security">
+    <div class="container">
+      <div>
+        <div class="section-eyebrow">Security & Compliance</div>
+        <h2 class="section-title">Enterprise-Grade Infrastructure, Vertical-Specific Compliance</h2>
+        <p class="section-sub">
+          Built on secure, SOC 2 Type II–certified infrastructure with frameworks for healthcare, legal, and payments.
+        </p>
+      </div>
+
+      <div class="security-grid">
+        <div class="security-card">
+          <h3>🏥 Healthcare (HIPAA)</h3>
+          <ul>
+            <li>HIPAA-ready architecture & BAA available</li>
+            <li>AES‑256 encryption in transit & at rest</li>
+            <li>Audit logs for all PHI interactions</li>
+            <li>99.9% uptime SLA</li>
+          </ul>
+        </div>
+        <div class="security-card">
+          <h3>⚖️ Legal (Attorney–Client)</h3>
+          <ul>
+            <li>Attorney–client privilege protections</li>
+            <li>Secure intake & document collection</li>
+            <li>Conflict-check workflows</li>
+            <li>Ethical compliance safeguards</li>
+          </ul>
+        </div>
+        <div class="security-card">
+          <h3>🏠 Home Services (PCI DSS)</h3>
+          <ul>
+            <li>PCI DSS–compliant payment handling</li>
+            <li>Encrypted customer data storage</li>
+            <li>Automated backup & recovery</li>
+            <li>Role-based access control</li>
+          </ul>
+        </div>
+        <div class="security-card">
+          <h3>🔒 All Verticals</h3>
+          <ul>
+            <li>SOC 2 Type II–certified infrastructure</li>
+            <li>Multi-model AI redundancy</li>
+            <li>Real-time threat monitoring</li>
+            <li>GDPR & CCPA aligned</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services-grid" style="margin-top:3rem;">
+        <div class="service-card">
+          <h3>Vertical-Specific Setup</h3>
+          <div class="service-price">$2,500 – $5,000</div>
+          <p class="service-text">
+            Custom workflows, scripts, and integrations tailored to your home services, legal, or medical operation. Fully live in 7–10 business days.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Monthly Optimization</h3>
+          <div class="service-price">$500 – $1,500 / month</div>
+          <p class="service-text">
+            Ongoing tuning of scripts, flows, content, and outreach. Monthly reviews so bookings, show rates, and leads keep improving.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Team Training & Enablement</h3>
+          <div class="service-price">$500 / session</div>
+          <p class="service-text">
+            Training for your staff on dashboards, reporting, and best practices so human + AI work together smoothly.
+          </p>
+        </div>
+      </div>
+
+      <div class="testimonials-strip">
+        <strong>What we don’t do:</strong> Sartorial AI doesn’t replace doctors, lawyers, or technicians. It replaces voicemail, hold music, missed calls, and manual follow‑up – so your experts focus on high‑value work.
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Ready to Stop Losing Revenue to Missed Opportunities?</h2>
+      <p>
+        Book a 30-minute strategy call to see how Sartorial AI Front Desk™, Content Engine™, and Pipeline Engine™ can transform how your business handles calls, content, and pipeline.
+      </p>
+      <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="btn btn-primary" style="padding:0.9rem 1.8rem; font-size:0.95rem;">Schedule Your Free Strategy Call</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>© 2026 Sartorial AI. All rights reserved.</div>
+        <div class="footer-links">
+          <span>Powered by secure enterprise AI infrastructure.</span>
+          <a href="#security">Security</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#frontdesk">Front Desk</a>
+        </div>
+      </div>
+      <div> SOC 2 Type II • HIPAA-Ready • PCI DSS • GDPR & CCPA aligned. </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('mobile-open');
+    }
+
+    function setVertical(vertical) {
+      document.querySelectorAll('.vertical-chip').forEach(chip => {
+        chip.classList.remove('active');
+      });
+      const activeChip = document.querySelector('.vertical-chip[data-vertical="' + vertical + '"]');
+      if (activeChip) activeChip.classList.add('active');
+
+      const text = document.getElementById('verticalText');
+      if (vertical === 'home') {
+        text.textContent = "Home service businesses lose over $12K each month from missed emergency calls and slow follow-up. Sartorial AI picks up every time, qualifies jobs, and books your on‑call techs.";
+      } else if (vertical === 'legal') {
+        text.textContent = "Law firms waste up to 40% of intake time on unqualified calls. Sartorial AI screens cases, asks the right questions, checks conflicts, and books consultations only with the right clients.";
+      } else if (vertical === 'medical') {
+        text.textContent = "Medical practices lose around $150 per no‑show with average 18% no‑show rates. Sartorial AI handles scheduling, rescheduling, insurance questions, and reminder sequences that cut no‑shows dramatically.";
+      }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(targetId);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          const navLinks = document.getElementById('navLinks');
+          navLinks.classList.remove('mobile-open');
         }
-        
-        // Industry tabs
-        function showIndustry(industry) {
-            // Hide all content
-            const contents = document.querySelectorAll('.industry-content');
-            contents.forEach(content => content.classList.remove('active'));
-            
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => button.classList.remove('active'));
-            
-            // Show selected content
-            document.getElementById(industry).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    document.getElementById('navLinks').classList.remove('active');
-                }
-            });
-        });
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>
