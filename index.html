@@ -253,6 +253,75 @@
     @media(max-width:768px){.nav-links{display:none;}.nav-ctas{display:none;}.nav-toggle{display:block;}.feat-grid{grid-template-columns:1fr;}.sgrid{grid-template-columns:1fr;}.svcgrid{grid-template-columns:1fr;}.pgrid{grid-template-columns:1fr;}.hmet{grid-template-columns:1fr 1fr;gap:1.5rem;}.bundle{flex-direction:column;}.bprice{text-align:left;}.trust-inner{justify-content:flex-start;}}
     @media(max-width:480px){.hmet{grid-template-columns:1fr;}.proof-stats{grid-template-columns:1fr 1fr;}.fnav{flex-direction:column;gap:1.5rem;}.fbadges{gap:.9rem;}}
 
+    /* ── PROOF STRIP (hero) ── */
+    .proof-strip{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem 1.1rem;padding:1rem 1.25rem;background:var(--bg-deep);border:1px solid var(--border);border-radius:10px;font-size:.85rem;}
+    .proof-strip-item{display:flex;align-items:center;gap:.45rem;}
+    .ps-val{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--gold);white-space:nowrap;line-height:1;}
+    .ps-txt{color:var(--muted);font-weight:300;line-height:1.4;}
+    .ps-div{color:var(--gold);opacity:.4;font-size:1.1rem;flex-shrink:0;}
+    @media(max-width:600px){.ps-div{display:none;}.proof-strip{flex-direction:column;align-items:flex-start;gap:.5rem;}}
+
+    /* ── WHY NOT $99 ── */
+    .why-not{margin-top:3rem;background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:2rem 2rem 2rem;position:relative;overflow:hidden;}
+    .why-not::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+    .why-not-eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:.5rem;font-weight:500;}
+    .why-not-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.2vw,2rem);font-weight:700;line-height:1.15;margin-bottom:.75rem;}
+    .why-not-title em{font-style:italic;color:var(--gold);}
+    .why-not-intro{font-size:.95rem;color:var(--muted);line-height:1.72;font-weight:300;max-width:52rem;margin-bottom:1.5rem;}
+    .why-not-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+    .why-not-stack{display:flex;flex-direction:column;gap:1rem;}
+    .wn-item{display:flex;gap:.85rem;align-items:flex-start;font-size:.9rem;color:var(--muted);line-height:1.65;font-weight:300;}
+    .wn-item strong{color:var(--text);font-weight:600;}
+    .wn-icon{font-size:1.2rem;flex-shrink:0;margin-top:.05rem;}
+    .why-not-replaces{background:var(--bg-deep);border:1px solid var(--border-soft);border-radius:12px;padding:1.4rem 1.5rem;}
+    .wnr-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.75rem;font-weight:500;}
+    .wnr-list{list-style:none;display:grid;gap:.5rem;margin-bottom:1.1rem;}
+    .wnr-list li{font-size:.9rem;color:var(--muted);display:flex;gap:.55rem;line-height:1.5;font-weight:300;}
+    .wnr-list li::before{content:'×';color:var(--gold);font-weight:700;flex-shrink:0;font-size:.85rem;margin-top:.1rem;}
+    .wnr-close{font-size:.88rem;color:var(--text-muted,var(--muted));line-height:1.68;font-weight:300;font-style:italic;border-top:1px solid var(--border-soft);padding-top:1rem;color:var(--text);}
+    @media(max-width:768px){.why-not-grid{grid-template-columns:1fr;}}
+
+    /* ── ROI CALCULATOR ── */
+    .roi-calc{margin-top:1.5rem;background:var(--bg-card);border:1px solid var(--gold-border);border-radius:18px;padding:2rem;position:relative;overflow:hidden;}
+    .roi-calc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-btn),transparent);}
+    .roi-header{margin-bottom:1.5rem;}
+    .roi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2vw,1.9rem);font-weight:700;line-height:1.15;margin-bottom:.5rem;}
+    .roi-title em{font-style:italic;color:var(--gold);}
+    .roi-intro{font-size:.9rem;color:var(--muted);line-height:1.65;font-weight:300;max-width:46rem;}
+    .roi-body{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem;}
+    .roi-input-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.85rem;font-weight:500;}
+    .roi-fields{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.1rem;}
+    .roi-field{display:flex;flex-direction:column;gap:.35rem;}
+    .roi-field label{font-size:.78rem;color:var(--muted);font-weight:400;letter-spacing:.01em;}
+    .roi-field input{background:var(--bg-deep);border:1px solid var(--border);border-radius:7px;padding:.55rem .8rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;transition:border-color .18s;-moz-appearance:textfield;appearance:textfield;outline:none;}
+    .roi-field input::-webkit-outer-spin-button,.roi-field input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+    .roi-field input:focus{border-color:var(--gold-border);}
+    .roi-formula{background:var(--bg-deep);border:1px dashed rgba(201,169,110,.18);border-radius:8px;padding:.75rem 1rem;}
+    .roi-formula-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.3rem;font-weight:500;display:block;}
+    .roi-formula-eq{font-size:.84rem;color:var(--muted);font-weight:300;line-height:1.5;}
+    .roi-result-panel{background:linear-gradient(160deg,rgba(201,169,110,.08),var(--bg-deep));border:1px solid var(--gold-border);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;}
+    .roi-result-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.5rem;font-weight:500;}
+    .roi-result-number{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:.3rem;transition:all .25s;}
+    .roi-result-sub{font-size:.78rem;color:var(--dim);margin-bottom:1.25rem;line-height:1.4;font-weight:300;}
+    .roi-vs{display:flex;align-items:center;gap:.75rem;background:var(--bg-card);border:1px solid var(--border-soft);border-radius:10px;padding:.85rem 1rem;flex-wrap:wrap;}
+    .roi-vs-item{flex:1;min-width:100px;}
+    .roi-vs-label{font-size:.72rem;color:var(--dim);margin-bottom:.25rem;font-weight:300;}
+    .roi-vs-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--text);}
+    .roi-vs-price span{font-family:'DM Sans',sans-serif;font-size:.8rem;color:var(--dim);font-weight:300;}
+    .roi-vs-recovery .roi-vs-price{color:var(--green);}
+    .roi-vs-arrow{color:var(--gold);font-size:1.2rem;flex-shrink:0;}
+    .roi-examples{border-top:1px solid var(--border-soft);padding-top:1.5rem;}
+    .roi-example-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-bottom:.85rem;font-weight:500;}
+    .roi-example-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.1rem;}
+    .roi-eg{background:var(--bg-deep);border:1px solid var(--border-soft);border-radius:10px;padding:.9rem 1rem;cursor:pointer;transition:border-color .18s,transform .18s;}
+    .roi-eg:hover{border-color:var(--gold-border);transform:translateY(-1px);}
+    .roi-eg-name{font-size:.88rem;font-weight:600;margin-bottom:.3rem;}
+    .roi-eg-stats{font-size:.75rem;color:var(--dim);line-height:1.5;margin-bottom:.4rem;font-weight:300;}
+    .roi-eg-result{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold);}
+    .roi-footnote{font-size:.84rem;color:var(--muted);line-height:1.68;font-weight:300;font-style:italic;}
+    @media(max-width:900px){.roi-body{grid-template-columns:1fr;}}
+    @media(max-width:600px){.roi-fields{grid-template-columns:1fr;}.roi-example-grid{grid-template-columns:1fr;}}
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
     .h1{animation:fadeUp .6s .0s ease both;}
@@ -321,23 +390,26 @@
   <div class="hero-grid inner">
     <div>
       <div class="eyebrow"><span class="edot"></span>AI Front Desk · Content Engine · Pipeline Engine</div>
-      <h1 class="h1">AI Built to <em>Fit</em> Your Business.<br>Not the Other Way Around.</h1>
-      <p class="h-sub">Custom-built for law firms, home services, and growing businesses. Sartorial AI answers every call, books every appointment, and fills your pipeline — wearing your name, delivering your results.</p>
+      <h1 class="h1">Never miss another call,<br><em>lead, or booked appointment</em> again.</h1>
+      <p class="h-sub">Sartorial AI is your custom-fit AI front desk for law firms, home services, and medical practices — answering every call, booking every appointment, and following up automatically so revenue never slips to voicemail.</p>
       <div class="vtog">
         <span class="vlabel">I run a:</span>
         <div class="vchip active" data-v="home" onclick="setV('home')">Home Services</div>
         <div class="vchip" data-v="legal" onclick="setV('legal')">Law Firm</div>
         <div class="vchip" data-v="medical" onclick="setV('medical')">Medical Practice</div>
       </div>
-      <p id="vtext" class="vtext">Home service businesses lose over $12,000 every month to missed emergency calls and slow follow-up. Sartorial AI picks up every time, qualifies the job, and books your techs — so you win work while competitors go to voicemail.</p>
+      <p id="vtext" class="vtext">Home service businesses, law firms, and medical practices lose thousands every month to missed calls and slow follow-up. Sartorial AI answers instantly, qualifies every opportunity, and books directly into your calendar — 24/7.</p>
       <div class="hbtns">
-        <a href="https://calendly.com/YOUR-LINK-HERE" class="btn btn-primary btn-lg">Book Your Strategy Call</a>
-        <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
+        <a href="https://calendly.com/YOUR-LINK-HERE" class="btn btn-primary btn-lg">Book Your Free Strategy Call</a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">See Exactly How It Works</a>
       </div>
-      <div class="hmet">
-        <div><div class="mval">3×</div><div class="mlbl">More booked appointments from the same inbound volume</div></div>
-        <div><div class="mval">20+</div><div class="mlbl">Hours saved weekly on calls, content &amp; follow-up</div></div>
-        <div><div class="mval">18→6%</div><div class="mlbl">No-show rate drop with AI reminder sequences</div></div>
+      <!-- PROOF STRIP -->
+      <div class="proof-strip">
+        <div class="proof-strip-item"><span class="ps-val">3×</span><span class="ps-txt">more booked appointments from the same inbound volume</span></div>
+        <span class="ps-div">·</span>
+        <div class="proof-strip-item"><span class="ps-val">67%</span><span class="ps-txt">fewer leads lost to voicemail</span></div>
+        <span class="ps-div">·</span>
+        <div class="proof-strip-item"><span class="ps-val">18%→6%</span><span class="ps-txt">no-show rate drop with AI reminders</span></div>
       </div>
     </div>
     <div>
@@ -529,6 +601,114 @@
     <div class="rule"></div>
     <p class="s-sub">Start with the AI Front Desk™ and add the Content Engine™ and Pipeline Engine™ as standalone products — or bundle all three for maximum impact and real savings.</p>
 
+    <!-- WHY NOT $99/MONTH -->
+    <div class="why-not">
+      <div class="why-not-header">
+        <div class="why-not-eyebrow">Transparent Pricing Philosophy</div>
+        <h3 class="why-not-title">Why Sartorial AI Isn't <em>$99/Month</em></h3>
+        <p class="why-not-intro">Most "AI receptionist" tools give you a glorified answering machine — basic call handling, canned scripts, and limited follow-up. Sartorial AI replaces an entire front-of-house growth stack:</p>
+      </div>
+      <div class="why-not-grid">
+        <div class="why-not-stack">
+          <div class="wn-item">
+            <div class="wn-icon">📞</div>
+            <div><strong>A 24/7 AI front desk</strong> that answers every call, qualifies every lead, and books directly into your calendar — across phone, SMS, chat, and email.</div>
+          </div>
+          <div class="wn-item">
+            <div class="wn-icon">✍️</div>
+            <div><strong>A full content team</strong> that turns one 45-minute strategy session into 8–12 SEO blog posts, 30–40 social posts, and monthly email campaigns — all in your brand voice.</div>
+          </div>
+          <div class="wn-item">
+            <div class="wn-icon">📈</div>
+            <div><strong>An AI outbound engine</strong> that builds and enriches lead lists, runs multi-channel sequences, and books qualified meetings for you without cold calling.</div>
+          </div>
+        </div>
+        <div class="why-not-replaces">
+          <div class="wnr-label">For many clients, that replaces:</div>
+          <ul class="wnr-list">
+            <li>1–2 full-time front desk or intake roles</li>
+            <li>A freelance writer or small content agency</li>
+            <li>An SDR/BDR function or outbound agency</li>
+          </ul>
+          <div class="wnr-close">One extra retained case, a handful of service installs, or a few new patients per month often more than covers the investment — which is why we price for results, not commodity call volume.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROI CALCULATOR -->
+    <div class="roi-calc">
+      <div class="roi-header">
+        <div class="why-not-eyebrow">Interactive Calculator</div>
+        <h3 class="roi-title">What Are Missed Calls <em>Really</em> Costing You?</h3>
+        <p class="roi-intro">Use this quick math to see what an AI front desk is worth in your business. Plug in your numbers — the results speak for themselves.</p>
+      </div>
+      <div class="roi-body">
+        <div class="roi-inputs">
+          <div class="roi-input-label">Step 1 — Plug in your numbers</div>
+          <div class="roi-fields">
+            <div class="roi-field">
+              <label>Calls per month</label>
+              <input type="number" id="roi-calls" value="200" min="1" oninput="calcROI()" />
+            </div>
+            <div class="roi-field">
+              <label>Missed call rate (%)</label>
+              <input type="number" id="roi-missed" value="20" min="1" max="100" oninput="calcROI()" />
+            </div>
+            <div class="roi-field">
+              <label>Conversion rate (%)</label>
+              <input type="number" id="roi-conv" value="30" min="1" max="100" oninput="calcROI()" />
+            </div>
+            <div class="roi-field">
+              <label>Avg. value per client ($)</label>
+              <input type="number" id="roi-value" value="500" min="1" oninput="calcROI()" />
+            </div>
+          </div>
+          <div class="roi-formula">
+            <span class="roi-formula-label">Step 2 — Your annual missed revenue</span>
+            <div class="roi-formula-eq">Calls × Missed% × Conversion% × Avg. Value × 12</div>
+          </div>
+        </div>
+        <div class="roi-result-panel">
+          <div class="roi-result-label">Estimated Annual Revenue Walking Out the Door</div>
+          <div class="roi-result-number" id="roi-result">$72,000</div>
+          <div class="roi-result-sub" id="roi-sub">200 missed calls/mo × 30% conversion × $500 avg value</div>
+          <div class="roi-vs">
+            <div class="roi-vs-item">
+              <div class="roi-vs-label">Sartorial AI Front Desk™</div>
+              <div class="roi-vs-price">$497<span>/mo</span></div>
+            </div>
+            <div class="roi-vs-arrow">→</div>
+            <div class="roi-vs-item roi-vs-recovery">
+              <div class="roi-vs-label">Recovering even 10% of lost revenue</div>
+              <div class="roi-vs-price" id="roi-recovery">$7,200<span>/yr</span></div>
+            </div>
+          </div>
+          <a href="https://calendly.com/YOUR-LINK-HERE" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1.25rem;">See the Full ROI — Book a Call</a>
+        </div>
+      </div>
+      <div class="roi-examples">
+        <div class="roi-example-label">Real-world examples</div>
+        <div class="roi-example-grid">
+          <div class="roi-eg" onclick="applyExample(300,25,20,3000)">
+            <div class="roi-eg-name">⚖️ Law Firm</div>
+            <div class="roi-eg-stats">300 calls · 25% missed · 20% conv · $3,000 avg case</div>
+            <div class="roi-eg-result">$540,000+ / year</div>
+          </div>
+          <div class="roi-eg" onclick="applyExample(200,20,30,500)">
+            <div class="roi-eg-name">🔧 Home Services</div>
+            <div class="roi-eg-stats">200 calls · 20% missed · 30% conv · $500 avg ticket</div>
+            <div class="roi-eg-result">$72,000+ / year</div>
+          </div>
+          <div class="roi-eg" onclick="applyExample(150,22,25,800)">
+            <div class="roi-eg-name">🏥 Medical Practice</div>
+            <div class="roi-eg-stats">150 calls · 22% missed · 25% conv · $800 avg visit</div>
+            <div class="roi-eg-result">$79,200+ / year</div>
+          </div>
+        </div>
+        <div class="roi-footnote">For most firms and practices, recovering just a fraction of that more than covers a premium AI front desk — before you even count the added content and outbound pipeline Sartorial AI brings.</div>
+      </div>
+    </div>
+
     <div class="pgrid">
       <!-- Front Desk -->
       <div class="pcard2">
@@ -674,9 +854,9 @@
         </div>
         <div class="ftag">Custom-fit AI for law firms, home services &amp; growing businesses.</div>
         <div class="fcontact">
-          <a href="mailto:info@sartorialai.co">
+          <a href="/cdn-cgi/l/email-protection#2841464e47685b495a5c475a4149444941064b47">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            info@sartorialai.co
+            <span class="__cf_email__" data-cfemail="c0a9aea6af80b3a1b2b4afb2a9a1aca1a9eea3af">[email&#160;protected]</span>
           </a>
           <a href="https://linkedin.com/company/YOUR-LINKEDIN-HERE">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -699,14 +879,14 @@
           <div class="fnlinks">
             <a href="#security">Security</a>
             <a href="#proof">Client Results</a>
-            <a href="mailto:info@sartorialai.co">Email Us</a>
+            <a href="/cdn-cgi/l/email-protection#ee87808881ae9d8f9c9a819c878f828f87c08d81">Email Us</a>
             <a href="https://calendly.com/YOUR-LINK-HERE">Book a Call</a>
           </div>
         </div>
       </div>
     </div>
     <div class="fbot">
-      <div>© 2026 Sartorial AI. All rights reserved. · info@sartorialai.co</div>
+      <div>© 2026 Sartorial AI. All rights reserved. · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a43444c456a594b585e4558434b464b43044945">[email&#160;protected]</a></div>
       <div class="fbadges">
         <span>SOC 2 Type II</span>
         <span>HIPAA-Ready</span>
@@ -718,9 +898,38 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
   function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
+
+  /* ROI Calculator */
+  function fmt(n){
+    if(n>=1000000)return '$'+(n/1000000).toFixed(1).replace(/\.0$/,'')+'M';
+    if(n>=1000)return '$'+(n/1000).toFixed(0)+'K';
+    return '$'+n.toLocaleString();
+  }
+  function calcROI(){
+    const calls=parseFloat(document.getElementById('roi-calls').value)||0;
+    const missed=parseFloat(document.getElementById('roi-missed').value)||0;
+    const conv=parseFloat(document.getElementById('roi-conv').value)||0;
+    const val=parseFloat(document.getElementById('roi-value').value)||0;
+    const annual=calls*(missed/100)*(conv/100)*val*12;
+    const recovery=annual*0.10;
+    document.getElementById('roi-result').textContent=fmt(annual)+'+';
+    document.getElementById('roi-recovery').innerHTML=fmt(recovery)+'<span>/yr</span>';
+    const mc=Math.round(calls*(missed/100));
+    document.getElementById('roi-sub').textContent=mc+' missed calls/mo × '+conv+'% conversion × $'+val.toLocaleString()+' avg value';
+  }
+  function applyExample(calls,missed,conv,val){
+    document.getElementById('roi-calls').value=calls;
+    document.getElementById('roi-missed').value=missed;
+    document.getElementById('roi-conv').value=conv;
+    document.getElementById('roi-value').value=val;
+    calcROI();
+    document.getElementById('roi-result').style.transform='scale(1.05)';
+    setTimeout(()=>{document.getElementById('roi-result').style.transform='scale(1)';},200);
+  }
+  calcROI();
   const vCopy={
     home:"Home service businesses lose over $12,000 every month to missed emergency calls and slow follow-up. Sartorial AI picks up every time, qualifies the job, and books your techs — so you win work while competitors go to voicemail.",
     legal:"Law firms waste up to 40% of intake time on unqualified calls. Sartorial AI screens cases, asks the right questions, checks for conflicts, and books consultations only with qualified prospective clients — 24 hours a day, 7 days a week.",
