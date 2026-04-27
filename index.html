@@ -1076,5 +1076,16 @@ calc();
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.06});
 document.querySelectorAll('.rev').forEach(el=>io.observe(el));
 </script>
+  <!-- AI Agent Widget -->
+<script>
+  (function() {
+    var script = document.createElement('script');
+    script.src = 'https://web.parallellabs.app/static/js/widget.js';
+    script.setAttribute('data-agent-id', '9bc5e0c9-8b65-422a-b64b-53bb749f82d5');
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+</script>
+<!-- End AI Agent Widget -->
 </body>
 </html>
