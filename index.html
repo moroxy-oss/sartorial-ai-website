@@ -159,7 +159,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.5}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;padding:0 5%;background:rgba(8,10,15,.88);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border)}
+nav{position:fixed;top:38px;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;padding:0 5%;background:rgba(8,10,15,.88);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border)}
 .nav-in{width:100%;max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;font-size:.9375rem;font-weight:600;color:var(--tx-1);letter-spacing:-.02em}
 .logo-box{width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,var(--ind),#818CF8);display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px var(--ind-glow);flex-shrink:0}
@@ -178,7 +178,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 @media(max-width:720px){.nav-links{display:none}}
 
 /* HERO */
-.hero{position:relative;padding:116px 5% 64px;overflow:hidden}
+.hero{position:relative;padding:154px 5% 64px;overflow:hidden}
 .hero-mesh{position:absolute;inset:0;z-index:0;pointer-events:none;
 background:radial-gradient(ellipse 80% 55% at 50% -5%,rgba(99,102,241,.16) 0%,transparent 70%),
 radial-gradient(ellipse 45% 35% at 80% 55%,rgba(99,102,241,.07) 0%,transparent 60%)}
@@ -376,10 +376,31 @@ background-size:60px 60px;mask-image:radial-gradient(ellipse 85% 70% at 50% 0%,b
 .promise-list li::before{content:'';width:12px;height:12px;flex-shrink:0;margin-top:.18rem;background-image:url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%2322C55E' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
 
 /* PRICING */
-.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin-top:2.5rem}
-.plan{background:var(--bg);padding:2rem 1.75rem;display:flex;flex-direction:column;position:relative}
-.plan.feat{background:var(--bg-1)}
-.plan-line{position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent,var(--ind),transparent)}
+/* ANNOUNCEMENT BAR */
+.announce-bar{background:linear-gradient(90deg,rgba(99,102,241,.22) 0%,rgba(99,102,241,.1) 50%,rgba(99,102,241,.22) 100%);border-bottom:1px solid var(--ind-p2);padding:0 5%;display:flex;align-items:center;justify-content:center;gap:.625rem;text-align:center;position:fixed;top:0;left:0;right:0;height:38px;z-index:210;overflow:hidden;white-space:nowrap}
+.announce-bar p{font-size:.76rem;color:var(--tx-2);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0}
+.announce-bar strong{color:var(--tx-1);font-weight:600}
+.announce-bar .announce-link{color:var(--ind-hi);text-decoration:none;font-weight:700;white-space:nowrap;font-size:.76rem;flex-shrink:0}
+.announce-bar .announce-link:hover{text-decoration:underline}
+.announce-mobile{display:none}
+@media(max-width:640px){
+  .announce-full{display:none}
+  .announce-mobile{display:inline}
+}
+@media(max-width:768px){.announce-bar{flex-direction:column;gap:.375rem}.announce-bar p{font-size:.74rem}}
+
+/* FREE TIER */
+.plan.free{background:var(--bg-1)}
+.plan-lbl.free-lbl{color:var(--green)}
+.free-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:var(--green);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .55rem;border-radius:100px;margin-bottom:.5rem}
+.pcta.free-cta{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.25)}.pcta.free-cta:hover{background:rgba(34,197,94,.18);border-color:var(--green)}
+
+.plan-grid{display:flex;flex-wrap:wrap;gap:16px;margin-top:2.5rem}
+@media(max-width:1024px){.tl-split{grid-template-columns:1fr;gap:2.5rem}
+@media(max-width:600px){.plan{flex-basis:100%}}
+.plan{flex:1 1 200px;background:var(--bg);padding:2rem 1.75rem;display:flex;flex-direction:column;position:relative;border:1px solid var(--border);border-radius:var(--r-xl)}
+.plan.feat{background:var(--bg-1);border-color:var(--ind-p2)}
+.plan-line{position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent,var(--ind),transparent);border-radius:var(--r-xl) var(--r-xl) 0 0}
 .plan-lbl{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);margin-bottom:1rem}
 .plan-lbl.hi{color:var(--ind-hi)}
 .plan-price{font-size:2.5rem;font-weight:600;letter-spacing:-.05em;color:var(--tx-1);line-height:1}
@@ -395,10 +416,6 @@ background-size:60px 60px;mask-image:radial-gradient(ellipse 85% 70% at 50% 0%,b
 .pcta.out{border:1px solid var(--border-m);color:var(--tx-2)}.pcta.out:hover{border-color:var(--border-h);color:var(--tx-1);background:rgba(255,255,255,.03)}
 .pcta.sol{background:var(--ind);color:#fff;box-shadow:0 3px 14px var(--ind-glow);border:none;cursor:pointer}.pcta.sol:hover{background:var(--ind-hi);transform:translateY(-1px)}
 .pcta.amb{background:rgba(245,158,11,.08);color:var(--amber);border:1px solid rgba(245,158,11,.18)}.pcta.amb:hover{background:rgba(245,158,11,.14);border-color:var(--amber)}
-.custom-bar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.75rem 2.25rem;margin-top:1px}
-.custom-bar h3{font-size:.9375rem;font-weight:600;color:var(--tx-1);letter-spacing:-.01em}.custom-bar p{font-size:.79rem;color:var(--tx-3);margin-top:.3rem;line-height:1.6}
-.cta-amb{display:inline-flex;align-items:center;gap:.375rem;font-size:.8rem;font-weight:600;color:var(--amber);text-decoration:none;padding:.6rem 1.125rem;background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.18);border-radius:8px;transition:all .2s;white-space:nowrap}
-.cta-amb:hover{background:rgba(245,158,11,.13);border-color:var(--amber)}
 .plan-footer{display:flex;align-items:center;justify-content:center;gap:1.75rem;margin-top:1.375rem;flex-wrap:wrap}
 .plan-footer span{font-size:.76rem;color:var(--tx-3);display:flex;align-items:center;gap:.3rem}
 .plan-footer span svg{width:10px;height:10px;color:var(--green)}
@@ -443,7 +460,7 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-  .stats-row{grid-template-columns:repeat(2,1fr)}.plan-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
   .foot-top{grid-template-columns:1fr 1fr}.tl-split{grid-template-columns:1fr;gap:2.5rem}
   .fd-split{grid-template-columns:1fr;gap:2.5rem}.fd-split.flip .fd-visual{order:0}
   .agent-header{grid-template-columns:1fr;gap:2rem}.agent-grid{grid-template-columns:repeat(2,1fr)}
@@ -451,14 +468,21 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
 @media(max-width:768px){
   .steps{grid-template-columns:1fr}.use-grid{grid-template-columns:1fr}.testi-grid{grid-template-columns:1fr}
   .calc-fields{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}
-  .dash-body{grid-template-columns:1fr 1fr}.custom-bar{grid-template-columns:1fr}
+  .dash-body{grid-template-columns:1fr 1fr}
   .foot-top{grid-template-columns:1fr}.what-strip{flex-direction:column;gap:1px}
   .agent-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:600px){.plan-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr}.agent-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.stats-row{grid-template-columns:1fr}.agent-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body id="top">
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  <p class="announce-full"><strong>SartorialAI replaces Clay, Instantly, Blaze, ChatGPT, Claude, Jasper</strong> and 8+ other tools with one platform built on your actual business. Save $400+/mo. Not generic AI. Your AI.</p>
+  <p class="announce-mobile"><strong>One platform replaces 10+ AI tools.</strong> Save $400+/mo. Your AI, not generic AI.</p>
+  <a href="https://agents.sartorialai.co/pricing" class="announce-link">Try free →</a>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -758,7 +782,6 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
         <div class="fd-highlight"><p>No blank page. No strategy deck. No agency retainer. Your website URL goes in, a complete revenue system comes out, built and ready to run.</p></div>
         <div style="display:flex;gap:.625rem;flex-wrap:wrap;margin-top:1.5rem">
           <a href="https://agents.sartorialai.co/signup" class="cta-p">Build my revenue system <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </a>
         </div>
       </div>
       <div class="fd-visual">
@@ -1082,6 +1105,27 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
       <p class="sp" style="max-width:100%;margin-top:0">Pick the plan that fits your current stage. Start where you are, capture more revenue immediately, and upgrade when your business needs more automation.</p>
     </div>
     <div class="plan-grid rev">
+
+      <!-- FREE TIER -->
+      <div class="plan free">
+        <div class="free-badge"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg> No card needed</div>
+        <div class="plan-lbl free-lbl">Try Free</div>
+        <div class="plan-price" style="font-size:2rem">Free</div>
+        <p class="plan-desc">Start with a complete go-to-market foundation — content strategy, real leads, a ready-to-launch email sequence, and an AI agent live on your site. Built from your business, not a template.</p>
+        <ul class="plan-feats">
+          <li>AI-built ideal customer profile</li>
+          <li>Starter list of in-market leads</li>
+          <li>5-email outreach sequence, personalized to you</li>
+          <li>Full-funnel content strategy (awareness to close)</li>
+          <li>Blog post, LinkedIn post, and Instagram post with images</li>
+          <li>AI chat agent deployed on your website</li>
+          <li class="off">24/7 AI call answering</li>
+          <li class="off">CRM sync and integrations</li>
+        </ul>
+        <a href="https://agents.sartorialai.co/pricing" class="pcta free-cta">Try it free</a>
+      </div>
+
+      <!-- SOLO OPERATOR -->
       <div class="plan">
         <div class="plan-lbl">Solo Operator</div>
         <div class="plan-price"><sup>$</sup>497<sub>/mo</sub></div>
@@ -1098,6 +1142,8 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
         </ul>
         <a href="https://agents.sartorialai.co/signup" class="pcta out">Start here</a>
       </div>
+
+      <!-- GROWING TEAM -->
       <div class="plan feat">
         <div class="plan-line"></div>
         <div class="plan-lbl hi">Growing Team, Most Popular</div>
@@ -1115,6 +1161,8 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
         </ul>
         <a href="https://agents.sartorialai.co/signup" class="pcta sol">Get this plan</a>
       </div>
+
+      <!-- SCALING FAST -->
       <div class="plan">
         <div class="plan-lbl">Scaling Fast</div>
         <div class="plan-price"><sup>$</sup>997<sub>/mo</sub></div>
@@ -1131,6 +1179,8 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
         </ul>
         <a href="https://agents.sartorialai.co/signup" class="pcta out">Scale now</a>
       </div>
+
+      <!-- FULL AUTOMATION -->
       <div class="plan">
         <div class="plan-lbl">Full Automation</div>
         <div class="plan-price"><sup>$</sup>1,797<sub>/mo</sub></div>
@@ -1147,17 +1197,13 @@ footer{border-top:1px solid var(--border);background:var(--bg-1);padding:3rem 5%
         </ul>
         <a href="https://calendly.com/SartorialAI" class="pcta amb">Talk to us</a>
       </div>
-    </div>
-    <div class="custom-bar rev">
-      <div>
-        <h3>The real cost is not the subscription. It is the revenue you lose while waiting.</h3>
-        <p>Every missed call, delayed follow-up, and dropped lead has a cost. SartorialAI is built to recover revenue quickly, reduce front desk friction, and make ROI visible fast.</p>
-      </div>
-      <a href="https://calendly.com/SartorialAI" class="cta-amb">Book a pricing call <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+
     </div>
     <div class="plan-footer">
+      <span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>Free tier available</span>
       <span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>No setup fees</span>
       <span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>Cancel anytime</span>
+      <span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>No credit card required to start</span>
       <span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>Built for fast ROI</span>
     </div>
   </div>
@@ -1260,3 +1306,4 @@ document.querySelectorAll('.rev').forEach(el=>io.observe(el));
 <!-- End AI Agent Widget -->
 </body>
 </html>
+
