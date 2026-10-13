@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.sartorialai.co/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.sartorialai.co/solutions</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sartorialai.co/home-services</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sartorialai.co/medical-dental</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sartorialai.co/law-firms</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sartorialai.co/med-spas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sartorialai.co/real-estate</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.sartorialai.co/restaurants-retail</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.sartorialai.co/solutions</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/home-services</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/medical-dental</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/law-firms</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/med-spas</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/real-estate</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/restaurants-retail</loc><lastmod>2026-10-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.sartorialai.co/sms</loc><lastmod>2026-10-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.sartorialai.co/sms-terms</loc><lastmod>2026-10-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.sartorialai.co/sms-privacy</loc><lastmod>2026-10-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

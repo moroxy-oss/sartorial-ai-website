@@ -1,0 +1,28 @@
+# SartorialAI
+
+> SartorialAI is an AI front desk and revenue system for small and mid-size businesses. A team of named AI agents answers every call, books appointments, qualifies and follows up on leads 24/7, and builds a complete go-to-market plan from your website. Free to start, live in 48 hours, no setup fees. SartorialAI is a trademark of Sartorial Digital, LLC.
+
+## What it does
+
+- Front Desk: answers calls, chats, and texts 24/7, books appointments, and qualifies leads (agents Aria, Max, Zane, Savannah)
+- Growth, Brand, and Operations: lead follow-up, email sequences, content, and reporting (agents Nova, Dax, Reese, Kai)
+- GTM Engine: turns a website URL into an ideal customer profile, a starter lead list, a 5-email sequence, a content plan, and ready-to-publish posts
+- Pricing: free to start, with paid plans from $497 per month
+
+## Key pages
+
+- [Home](https://www.sartorialai.co/): platform overview, agent team, pricing, and FAQ
+- [Solutions by industry](https://www.sartorialai.co/solutions): hub for every vertical
+- [Home services](https://www.sartorialai.co/home-services): HVAC, plumbing, roofing, electrical, and contractors
+- [Medical and dental](https://www.sartorialai.co/medical-dental): patient scheduling and front desk
+- [Law firms](https://www.sartorialai.co/law-firms): legal intake and consultation booking
+- [Med spas](https://www.sartorialai.co/med-spas): booking and front desk for aesthetic clinics
+- [Real estate](https://www.sartorialai.co/real-estate): lead response and showing scheduling
+- [Restaurants and retail](https://www.sartorialai.co/restaurants-retail): reservations, catering, and call answering
+
+## Get started
+
+- [Start free](https://agents.sartorialai.co/signup)
+- [Pricing](https://agents.sartorialai.co/pricing)
+- Contact: morris@sartorialai.co
+- [LinkedIn](https://www.linkedin.com/company/sartorialai)
