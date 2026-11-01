@@ -1,28 +1,41 @@
 # SartorialAI
 
-> SartorialAI is an AI front desk and revenue system for small and mid-size businesses. A team of named AI agents answers every call, books appointments, qualifies and follows up on leads 24/7, and builds a complete go-to-market plan from your website. Free to start, live in 48 hours, no setup fees. SartorialAI is a trademark of Sartorial Digital, LLC.
+> SartorialAI is an AI front desk and revenue system for small and mid-size businesses. A team of named AI agents answers every call, text and chat, books appointments, qualifies and follows up on leads, publishes content and monitors AI search visibility, 24/7. Free plan available, paid plans from $497/month, live within 48 hours, no setup fees. SartorialAI is a trademark of Sartorial Digital, LLC.
 
-## What it does
+## AI team
+- Front Desk: Aria (inbound calls), Max (booking and scheduling), Nova (customer support)
+- Growth: Zane (lead qualification), Savannah (nurture and follow-up), Dax (outbound sales)
+- Brand: Reese (content and marketing)
+- Operations: Kai (executive operations)
+- AI Co-Founder: a daily approve-or-skip queue of content, outreach, follow-ups and reply drafts
 
-- Front Desk: answers calls, chats, and texts 24/7, books appointments, and qualifies leads (agents Aria, Max, Zane, Savannah)
-- Growth, Brand, and Operations: lead follow-up, email sequences, content, and reporting (agents Nova, Dax, Reese, Kai)
-- GTM Engine: turns a website URL into an ideal customer profile, a starter lead list, a 5-email sequence, a content plan, and ready-to-publish posts
-- Pricing: free to start, with paid plans from $497 per month
+## Pricing
+- Free: ideal customer profile, starter leads, 5-email sequence, content plan, website chat agent
+- Solo Operator, $497/month: 24/7 AI call answering, booking, lead capture, SMS and web chat, CRM sync
+- Scaling Fast, $997/month: adds outbound calling, lead scoring, advanced follow-up, up to 3 locations
+- Full Automation, from $1,797/month: unlimited conversations, custom workflows and integrations, dedicated account manager
 
 ## Key pages
+- [Home](https://www.sartorialai.co/): platform overview, ROI calculator, pricing, FAQ
+- [Industries](https://www.sartorialai.co/solutions)
+- [Home Services](https://www.sartorialai.co/home-services): Never miss another service call. SartorialAI answers, quotes, and books jobs 24/7 for HVAC, plumbing, roofing, and electrical. Free to start.
+- [Medical and Dental](https://www.sartorialai.co/medical-dental): New patients don't wait on hold. SartorialAI answers, schedules, and follows up 24/7 for medical and dental practices. Fewer no-shows. Free to start.
+- [Law Firms](https://www.sartorialai.co/law-firms): Your next case is calling during your deposition. SartorialAI answers, qualifies, and books consultations 24/7 for law firms. Free to start.
+- [Real Estate](https://www.sartorialai.co/real-estate): Buyers tour with whoever replies first. SartorialAI answers, qualifies, and books showings 24/7 for real estate agents and teams. Free to start.
+- [Med Spas and Salons](https://www.sartorialai.co/med-spas): SartorialAI answers, books, and follows up 24/7 for med spas and aesthetic clinics, so no call during treatment becomes a lost booking. Free to start.
+- [Restaurants and Retail](https://www.sartorialai.co/restaurants-retail): SartorialAI answers reservations, catering requests, and questions 24/7 for restaurants and retail, even during the Friday rush. Free to start.
+- [AI search visibility (AEO)](https://www.sartorialai.co/ai-visibility): weekly monitoring of ChatGPT, Claude, Gemini, Perplexity and DeepSeek
+- [Getting started guide](https://www.sartorialai.co/getting-started)
+- [Blog](https://www.sartorialai.co/blog)
+- [How Much Do Missed Calls Really Cost an HVAC Company?](https://www.sartorialai.co/blog-hvac-missed-calls-cost)
+- [AI Receptionist vs. Answering Service for Law Firms](https://www.sartorialai.co/blog-ai-receptionist-vs-answering-service-law-firms)
+- [How Dental Practices Cut No-Shows With Automated Reminders and Recall](https://www.sartorialai.co/blog-dental-no-shows-reminders-recall)
+- [Speed to Lead in Real Estate: Why the First Reply Wins](https://www.sartorialai.co/blog-real-estate-speed-to-lead)
+- [How to Get Your Business Recommended by ChatGPT](https://www.sartorialai.co/blog-get-recommended-by-chatgpt)
+- [What an AI Front Desk Actually Does in Its First 48 Hours](https://www.sartorialai.co/blog-ai-front-desk-first-48-hours)
 
-- [Home](https://www.sartorialai.co/): platform overview, agent team, pricing, and FAQ
-- [Solutions by industry](https://www.sartorialai.co/solutions): hub for every vertical
-- [Home services](https://www.sartorialai.co/home-services): HVAC, plumbing, roofing, electrical, and contractors
-- [Medical and dental](https://www.sartorialai.co/medical-dental): patient scheduling and front desk
-- [Law firms](https://www.sartorialai.co/law-firms): legal intake and consultation booking
-- [Med spas](https://www.sartorialai.co/med-spas): booking and front desk for aesthetic clinics
-- [Real estate](https://www.sartorialai.co/real-estate): lead response and showing scheduling
-- [Restaurants and retail](https://www.sartorialai.co/restaurants-retail): reservations, catering, and call answering
-
-## Get started
-
-- [Start free](https://agents.sartorialai.co/signup)
-- [Pricing](https://www.sartorialai.co/#pricing)
-- Contact: morris@sartorialai.co
-- [LinkedIn](https://www.linkedin.com/company/sartorialai)
+## Contact
+- Website: https://www.sartorialai.co/
+- Start free: https://agents.sartorialai.co/signup
+- Email: morris@sartorialai.co
+- LinkedIn: https://www.linkedin.com/company/sartorialai
